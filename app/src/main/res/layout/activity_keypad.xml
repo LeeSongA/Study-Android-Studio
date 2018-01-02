@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#eeeeee"
     android:orientation="vertical"
     android:layout_width="300dp"
@@ -10,7 +9,6 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <TextView
             android:text="Keypad"
             android:textSize="20sp"
@@ -21,13 +19,12 @@
             android:layout_height="53dp" />
     </LinearLayout>
 
-
     <LinearLayout
         android:padding="24dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <android.inputmethodservice.KeyboardView
+        <TextView
             android:id="@+id/keypad"
             android:textSize="15sp"
             android:textColor="#000"
@@ -39,12 +36,10 @@
             android:keyPreviewLayout="@layout/preview"/>
     </LinearLayout>
 
-
     <View
         android:background="#66bdbdbd"
         android:layout_width="match_parent"
         android:layout_height="1dp" />
-
 
     <LinearLayout
         android:orientation="horizontal"
