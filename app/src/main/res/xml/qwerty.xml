@@ -22,6 +22,8 @@
         <Key android:codes="57" android:keyLabel="9" android:keyEdgeFlags="right" />
     </Row>
     <Row>
+        <key android:codes="-5" android:keyLabel="DELETE" android:keyEdgeFlags="left" />
         <Key android:codes="48" android:keyLabel="0" />
+        <key android:codes="-4" android:keyLabel="DONE" android:keyEdgeFlags="right" />
     </Row>
 </Keyboard>
