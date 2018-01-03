@@ -27,11 +27,6 @@ public class SimpleIME extends InputMethodService
             case Keyboard.KEYCODE_DELETE :
                 inputConnection.deleteSurroundingText(1, 0);
                 break;
-            case Keyboard.KEYCODE_SHIFT:
-                caps = !caps;
-                keyboard.setShifted(caps);
-                keyboardView.invalidateAllKeys();
-                break;
             case Keyboard.KEYCODE_DONE:
                 inputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
@@ -71,6 +66,7 @@ public class SimpleIME extends InputMethodService
     public void swipeUp(){
 
     }
+
 
     @Override
     public View onCreateInputView() {
