@@ -1,52 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#eeeeee"
-    android:orientation="vertical"
-    android:layout_width="300dp"
-    android:layout_height="wrap_content">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ms.work.MainActivity">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:text="Keypad"
-            android:textSize="20sp"
-            android:textColor="#fff"
-            android:gravity="center"
-            android:background="#ff7a00"
-            android:layout_width="match_parent"
-            android:layout_height="53dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/keypad"
-        android:padding="24dp"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:id="@+id/numpadLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:keyPreviewLayout="@layout/keyboard" >
-    </LinearLayout>
+        android:layout_gravity="center|center_vertical"
+        android:background="#eeeeee"
+        android:orientation="vertical">
 
-    <View
-        android:background="#66bdbdbd"
-        android:layout_width="match_parent"
-        android:layout_height="1dp" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:text="닫기"
-            android:textSize="15sp"
-            android:textColor="#ff7a00"
-            android:padding="16dp"
-            android:gravity="center"
-            android:background="#00000000"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:onClick="OnClose"/>
+            android:layout_height="50dp"
+            android:background="#ff7a00"
+            android:gravity="center"
+            android:text="Keypad"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <com.example.ms.work.CustomNumpadView
+            android:id="@+id/numpadView"
+            android:layout_width="250dip"
+            android:layout_height="100dip"/>
+
+        <Button
+            android:id="@+id/buttonClose"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:onClick="OnClose"
+            android:padding="16dp"
+            android:text="닫기"
+            android:textColor="#ff7a00"
+            android:textSize="15sp" />
     </LinearLayout>
-</LinearLayout>
+</FrameLayout>
