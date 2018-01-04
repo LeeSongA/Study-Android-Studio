@@ -15,19 +15,15 @@ import android.widget.LinearLayout;
 
 public class keypad extends Activity {
 
-    private InputMethodManager inputMethodManager;
     private CustomNumpadView customNumpadView;
-    private LinearLayout numpadLayout;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_keypad);
 
-        numpadLayout = findViewById(R.id.numpadLayout);
         customNumpadView = (CustomNumpadView) findViewById(R.id.numpadView);
         customNumpadView.setActionListenerActivity(keypad.this);
-        numpadLayout.setVisibility(View.VISIBLE);
     }
 
     public void OnClose(View v) {

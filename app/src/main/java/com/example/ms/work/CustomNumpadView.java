@@ -6,8 +6,7 @@ import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
-import android.view.View;
-import android.widget.EditText;
+
 
 /**
  * Created by user on 2018-01-03.

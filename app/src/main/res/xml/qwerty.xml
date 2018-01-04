@@ -45,7 +45,7 @@
             android:keyEdgeFlags="right" />
     </Row>
     <Row>
-        <key
+        <Key
             android:codes="67"
             android:iconPreview="@drawable/ic_key_delete"
             android:keyIcon="@drawable/ic_key_delete"
@@ -53,7 +53,7 @@
         <Key
             android:codes="7"
             android:keyLabel="0" />
-        <key
+        <Key
             android:codes="56"
             android:keyLabel="OK"
             android:keyEdgeFlags="right" />

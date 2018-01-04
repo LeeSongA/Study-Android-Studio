@@ -1,47 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.ms.work.MainActivity">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#eeeeee"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/numpadLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|center_vertical"
-        android:background="#eeeeee"
-        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ff7a00"
+        android:gravity="center"
+        android:text="Keypad"
+        android:textColor="#fff"
+        android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#ff7a00"
-            android:gravity="center"
-            android:text="Keypad"
-            android:textColor="#fff"
-            android:textSize="20sp" />
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="50dp" />
+    <com.example.ms.work.CustomNumpadView
+        android:id="@+id/numpadView"
+        android:layout_width="250dip"
+        android:layout_height="100dip"/>
 
-        <com.example.ms.work.CustomNumpadView
-            android:id="@+id/numpadView"
-            android:layout_width="250dip"
-            android:layout_height="100dip"/>
-
-        <Button
-            android:id="@+id/buttonClose"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#00000000"
-            android:gravity="center"
-            android:onClick="OnClose"
-            android:padding="16dp"
-            android:text="닫기"
-            android:textColor="#ff7a00"
-            android:textSize="15sp" />
-    </LinearLayout>
-</FrameLayout>
+    <Button
+        android:id="@+id/buttonClose"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#00000000"
+        android:gravity="center"
+        android:onClick="OnClose"
+        android:padding="16dp"
+        android:text="닫기"
+        android:textColor="#ff7a00"
+        android:textSize="15sp" />
+</LinearLayout>
