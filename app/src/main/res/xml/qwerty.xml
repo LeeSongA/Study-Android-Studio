@@ -54,7 +54,7 @@
             android:codes="7"
             android:keyLabel="0" />
         <Key
-            android:codes="56"
+            android:codes="66"
             android:keyLabel="OK"
             android:keyEdgeFlags="right" />
     </Row>

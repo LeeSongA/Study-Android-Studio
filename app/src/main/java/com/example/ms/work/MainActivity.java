@@ -15,11 +15,11 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private final Handler handler = new Handler();
     WebView webView;
+    private String buffer;
 
     @SuppressLint("JavascriptInterface")
     @Override
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         webView.addJavascriptInterface(new AndroidWebBridge(webView), "HybridApp");
         webView.loadUrl("file:///android_asset/index.html");
         webView.setWebViewClient(new WebViewClientClass());
+        webView.loadUrl("javascript:onResume('Android -> Javascript call')");
     }
 
     public void alertSetting(WebView webView) {
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             };
         });
     }
+
     private class AndroidWebBridge {
         private WebView webView;
 
@@ -79,10 +81,11 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(
                                 getApplicationContext(),
                                 keypad.class);
-                        startActivity(intent);
+                        startActivityForResult(intent, 201);
                 }
             });
         }
+
     }
 
     private class WebViewClientClass extends WebViewClient {
@@ -92,6 +95,16 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(data.getStringExtra("result")!=null) {
+            buffer = data.getStringExtra("result");
+            webView.loadUrl("javascript:set_context(\""+buffer+"\");");
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
 }
 
 
