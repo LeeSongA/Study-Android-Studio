@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         webView.addJavascriptInterface(new AndroidWebBridge(webView), "HybridApp");
         webView.loadUrl("file:///android_asset/index.html");
         webView.setWebViewClient(new WebViewClientClass());
-        webView.loadUrl("javascript:onResume('Android -> Javascript call')");
     }
 
     public void alertSetting(WebView webView) {

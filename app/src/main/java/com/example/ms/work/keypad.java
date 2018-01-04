@@ -23,6 +23,7 @@ public class keypad extends Activity {
 
         customNumpadView = (CustomNumpadView) findViewById(R.id.numpadView);
         customNumpadView.setActionListenerActivity(keypad.this);
+        editText = findViewById(R.id.editText);
     }
 
     public void OnClose(View v) {
