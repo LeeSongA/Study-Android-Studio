@@ -27,6 +27,7 @@ public class keypad extends Activity {
         customNumpadView.setKeypad(this);
 
         editText = findViewById(R.id.editText);
+        editText.setInputType(0);
     }
 
     public void onEnter() {

@@ -2,12 +2,10 @@ package com.example.ms.work;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
-
 
 /**
  * Created by user on 2018-01-03.

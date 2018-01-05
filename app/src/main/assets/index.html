@@ -5,13 +5,13 @@
             function Event() {
                 window.HybridApp.setMessage("Javascript -> Android call");
             }
-            function set_context(name){
+            function set_context(name) {
                 document.getElementById("context").value = name;
             }
         </script>
     </head>
     <body>
-        <input type="text" value="" id="context" />
+        <input type="text" value="" id="context" readonly/>
         <button type="button" value="button" id="btnOK" onclick="Event()"> Keypad </button>
     </body>
 </html>
