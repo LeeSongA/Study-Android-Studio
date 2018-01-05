@@ -59,7 +59,6 @@ public class CustomNumpadView extends KeyboardView {
 
         @Override
         public void onRelease(int primaryCode) {
-
         }
 
         @Override
