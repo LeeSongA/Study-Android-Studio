@@ -16,6 +16,7 @@ public class keypad extends Activity {
     private CustomNumpadView customNumpadView;
     private EditText editText;
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -23,12 +24,21 @@ public class keypad extends Activity {
 
         customNumpadView = (CustomNumpadView) findViewById(R.id.numpadView);
         customNumpadView.setActionListenerActivity(keypad.this);
+        customNumpadView.setKeypad(this);
+
         editText = findViewById(R.id.editText);
+    }
+
+    public void onEnter() {
+        Intent intent = new Intent();
+        intent.putExtra("result", editText.getText().toString());
+        setResult(RESULT_OK, intent);
+        finish();
     }
 
     public void OnClose(View v) {
         Intent intent = new Intent();
-        intent.putExtra("result", editText.getText().toString());
+        intent.getType();
         setResult(RESULT_OK, intent);
         finish();
     }

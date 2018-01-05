@@ -2,6 +2,7 @@ package com.example.ms.work;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.util.AttributeSet;
@@ -16,9 +17,15 @@ public class CustomNumpadView extends KeyboardView {
     CustomOnKeyboardActionListener keyListener;
     Keyboard keyboard = null;
 
+    private keypad k;
+
     public CustomNumpadView(Context context, AttributeSet attrs) {
         super(context, attrs);
         keyboard = new Keyboard(context, R.xml.qwerty);
+    }
+
+    public void setKeypad(keypad k) {
+        this.k = k;
     }
 
     public void setActionListenerActivity(Activity act) {
@@ -44,6 +51,8 @@ public class CustomNumpadView extends KeyboardView {
             long eventTime = System.currentTimeMillis();
             KeyEvent event = new KeyEvent(eventTime, eventTime, KeyEvent.ACTION_DOWN, primaryCode, 0, 0, 0, 0, KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE);
             owner.dispatchKeyEvent(event);
+            if(primaryCode == 66)
+                k.onEnter();
         }
 
         @Override
@@ -52,6 +61,7 @@ public class CustomNumpadView extends KeyboardView {
 
         @Override
         public void onRelease(int primaryCode) {
+
         }
 
         @Override
