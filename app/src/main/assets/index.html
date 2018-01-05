@@ -9,9 +9,36 @@
                 document.getElementById("context").value = name;
             }
         </script>
+        <style>
+             .text {
+                display: inline-block;
+                width: 200px;
+                height: 20px;
+                border-bottom: 2px solid #ffa500;
+                font-size: 14px;
+            }
+            .button {
+                display: inline-block;
+                background-color: white;
+                color: blank;
+                border: 2px solid #ffa500;
+                padding: 4px 8px;
+                text-align: center;
+                font-size: 14px;
+                transition-duration: 0.4s;
+            }
+            .button:hover {
+                background-color: #ffa500;
+                color: white;
+            }
+        </style>
     </head>
     <body>
-        <input type="text" value="" id="context" readonly/>
-        <button type="button" value="button" id="btnOK" onclick="Event()"> Keypad </button>
+    <form>
+        <p class="text">
+        <input type="text" name="text" value="" id="context" readonly/>
+        </p>
+        <button class="button" onclick="Event()"> Keypad </button>
+    </form>
     </body>
 </html>
