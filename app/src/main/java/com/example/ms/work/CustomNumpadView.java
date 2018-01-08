@@ -14,7 +14,6 @@ import android.view.KeyEvent;
 public class CustomNumpadView extends KeyboardView {
     CustomOnKeyboardActionListener keyListener;
     Keyboard keyboard = null;
-
     private keypad k;
 
     public CustomNumpadView(Context context, AttributeSet attrs) {
