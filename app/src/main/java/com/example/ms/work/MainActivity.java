@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     private final Handler handler = new Handler();
     WebView webView;
-    private String buffer;
     private String webEdit;
+
 
     @SuppressLint("JavascriptInterface")
     @Override
@@ -80,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
                 public void run() {
                     Log.e("HybridApp", arg);
                     webEdit = arg;
-                        Intent intent = new Intent(
-                                getApplicationContext(),
-                                keypad.class);
-                        startActivityForResult(intent, 201);
+                    Intent intent = new Intent(
+                            getApplicationContext(),
+                            keypad.class);
+                    startActivityForResult(intent, 201);
                 }
             });
         }
@@ -100,8 +100,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(data.getStringExtra("result")!=null) {
-            buffer = data.getStringExtra("result");
-            webView.loadUrl("javascript:set_context(\""+webEdit+ "\", \"" + buffer+"\");");
+            webView.loadUrl("javascript:set_context(\""+ webEdit +"\", \""+ data.getStringExtra("result") +"\");");
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

@@ -5,34 +5,53 @@ package com.example.ms.work;
  */
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class keypad extends Activity {
 
-    private CustomNumpadView customNumpadView;
     private EditText editText;
+    private CustomNumpadView customNumpadView;
+    private MainActivity mainActivity;
+    private BroadcastReceiver broadcastReceiver = null;
+    private Context context = null;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_keypad);
 
+        editText = findViewById(R.id.editText);
+        editText.setInputType(0);
+
         customNumpadView = (CustomNumpadView) findViewById(R.id.numpadView);
         customNumpadView.setActionListenerActivity(keypad.this);
         customNumpadView.setKeypad(this);
 
-        editText = findViewById(R.id.editText);
-        editText.setInputType(0);
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("test.com.action.TEST");
+
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Toast.makeText(context, "Light On", Toast.LENGTH_SHORT).show();
+            }
+        };
+        registerReceiver(broadcastReceiver, intentFilter);
     }
+
 
     public void onKey() {
         Intent intent = new Intent();
-        intent.putExtra("result", editText.getText().toString());
-
+        intent.setAction("test.com.action.TEST");
+        sendBroadcast(intent);
     }
 
     public void onEnter() {
