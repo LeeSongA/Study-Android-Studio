@@ -2,14 +2,12 @@
 <html>
     <head>
         <script language="javascript">
-            function Event() {
-                window.HybridApp.setMessage("Javascript -> Android call");
+            /* "Javascript -> Android call" */
+            function Event(id) {
+                window.HybridApp.setMessage(id);
             }
             function set_context(name) {
-                document.getElementById("context1").value = name;
-                document.getElementById("context2").value = name;
-                document.getElementById("context3").value = name;
-                document.getElementById("context4").value = name;
+                document.getElementById(id).value = name;
             }
         </script>
         <style>

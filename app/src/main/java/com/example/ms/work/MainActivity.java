@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private final Handler handler = new Handler();
     WebView webView;
     private String buffer;
-
+    private String webEdit;
 
     @SuppressLint("JavascriptInterface")
     @Override
@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     Log.e("HybridApp", arg);
+                    webEdit = arg;
                         Intent intent = new Intent(
                                 getApplicationContext(),
                                 keypad.class);
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(data.getStringExtra("result")!=null) {
             buffer = data.getStringExtra("result");
-            webView.loadUrl("javascript:set_context(\""+buffer+"\");");
+            webView.loadUrl("javascript:set_context(\""+webEdit+ "\", \"" + buffer+"\");");
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
