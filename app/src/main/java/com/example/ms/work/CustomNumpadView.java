@@ -49,6 +49,9 @@ public class CustomNumpadView extends KeyboardView {
             long eventTime = System.currentTimeMillis();
             KeyEvent event = new KeyEvent(eventTime, eventTime, KeyEvent.ACTION_DOWN, primaryCode, 0, 0, 0, 0, KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE);
             owner.dispatchKeyEvent(event);
+            if((primaryCode >= 7 && primaryCode <= 16) || primaryCode == 67) {
+                k.onKey();
+            }
             if(primaryCode == 66)
                 k.onEnter();
         }

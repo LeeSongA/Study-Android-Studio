@@ -29,6 +29,12 @@ public class keypad extends Activity {
         editText.setInputType(0);
     }
 
+    public void onKey() {
+        Intent intent = new Intent();
+        intent.putExtra("result", editText.getText().toString());
+
+    }
+
     public void onEnter() {
         Intent intent = new Intent();
         intent.putExtra("result", editText.getText().toString());
