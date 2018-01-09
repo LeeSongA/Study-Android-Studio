@@ -6,7 +6,10 @@
                 window.HybridApp.setMessage("Javascript -> Android call");
             }
             function set_context(name) {
-                document.getElementById("context").value = name;
+                document.getElementById("context1").value = name;
+                document.getElementById("context2").value = name;
+                document.getElementById("context3").value = name;
+                document.getElementById("context4").value = name;
             }
         </script>
         <style>
@@ -14,27 +17,16 @@
                 display: inline-block;
                 width: 200px;
                 height: 20px;
-                border-bottom: 2px solid #ffa500;
-                font-size: 14px;
-            }
-            .button {
-                display: inline-block;
-                background-color: white;
-                color: blank;
                 border: 2px solid #ffa500;
-                padding: 4px 8px;
-                text-align: center;
+                margin: 0.5em;
                 font-size: 14px;
-                transition-duration: 0.4s;
-            }
-            .button:hover {
-                background-color: #ffa500;
-                color: white;
             }
         </style>
     </head>
     <body>
-        <input class="text" type="text" name="text" value="" id="context" readonly/>
-        <button class="button" onclick="Event()"> Keypad </button>
+        <input class="text" type="text" name="text" value="" id="context1" />
+        <input class="text" type="text" name="text" value="" id="context2" />
+        <input class="text" type="text" name="text" value="" id="context3" />
+        <input class="text" type="text" name="text" value="" id="context4" />
     </body>
 </html>
