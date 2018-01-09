@@ -6,7 +6,7 @@
             function Event(id) {
                 window.HybridApp.setMessage(id);
             }
-            function set_context(name) {
+            function set_context(id, name) {
                 document.getElementById(id).value = name;
             }
         </script>
@@ -22,9 +22,9 @@
         </style>
     </head>
     <body>
-        <input class="text" type="text" name="text" value="" id="context1" onclick="Event()"/>
-        <input class="text" type="text" name="text" value="" id="context2" onclick="Event()" />
-        <input class="text" type="text" name="text" value="" id="context3" onclick="Event()" />
-        <input class="text" type="text" name="text" value="" id="context4" onclick="Event()" />
+        <input class="text" type="text" name="text" value="" id="context1" onclick="Event('context1')"/>
+        <input class="text" type="text" name="text" value="" id="context2" onclick="Event('context2')" />
+        <input class="text" type="text" name="text" value="" id="context3" onclick="Event('context3')" />
+        <input class="text" type="text" name="text" value="" id="context4" onclick="Event('context4')" />
     </body>
 </html>
