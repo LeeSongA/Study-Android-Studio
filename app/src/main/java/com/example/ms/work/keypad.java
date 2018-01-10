@@ -5,22 +5,18 @@ package com.example.ms.work;
  */
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class keypad extends Activity {
 
     private EditText editText;
     private CustomNumpadView customNumpadView;
-    private MainActivity mainActivity;
-    private BroadcastReceiver broadcastReceiver = null;
+
     private Context context = null;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,24 +30,12 @@ public class keypad extends Activity {
         customNumpadView = (CustomNumpadView) findViewById(R.id.numpadView);
         customNumpadView.setActionListenerActivity(keypad.this);
         customNumpadView.setKeypad(this);
-
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("test.com.action.TEST");
-
-        broadcastReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                Toast.makeText(context, "Light On", Toast.LENGTH_SHORT).show();
-            }
-        };
-        registerReceiver(broadcastReceiver, intentFilter);
     }
-
 
     public void onKey() {
         Intent intent = new Intent();
         intent.setAction("test.com.action.TEST");
-        sendBroadcast(intent);
+        sendBroadcast(intent.putExtra("result", editText.getText().toString()));
     }
 
     public void onEnter() {
