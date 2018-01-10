@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private String webEdit;
     private BroadcastReceiver broadcastReceiver;
 
-
     @SuppressLint("JavascriptInterface")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,14 +110,6 @@ public class MainActivity extends AppCompatActivity {
             view.loadUrl(url);
             return true;
         }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(data.getStringExtra("result")!=null) {
-            webView.loadUrl("javascript:set_context(\""+ webEdit +"\", \""+ data.getStringExtra("result") +"\");");
-        }
-        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
