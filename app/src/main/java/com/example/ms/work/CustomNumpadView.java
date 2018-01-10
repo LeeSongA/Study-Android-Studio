@@ -26,15 +26,9 @@ public class CustomNumpadView extends KeyboardView {
         super(context, attrs);
         keyboard = new Keyboard(context, R.xml.qwerty);
 
-<<<<<<< HEAD
         keyList =  keyboard.getKeys();
-
         list = new ArrayList<Integer> (10);
-=======
-        List<Keyboard.Key> keyList =  keyboard.getKeys();
 
-        ArrayList<Integer> list = new ArrayList<Integer> (10);
->>>>>>> 32f3a8337ed2e0920a5371ad3c888178ed578ec0
         for(int i=0; i<10; i++) {
             list.add(new Integer(i));
         }
@@ -94,7 +88,6 @@ public class CustomNumpadView extends KeyboardView {
                 // 여러개 눌리는 것처럼 보이도록,
                 // dispatchKeyEvent 사용?
             }
-
             if(primaryCode == 66)
                 k.onEnter();
         }
