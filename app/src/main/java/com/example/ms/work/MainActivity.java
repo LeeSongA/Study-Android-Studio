@@ -1,9 +1,11 @@
 package com.example.ms.work;
 
 import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private final Handler handler = new Handler();
     WebView webView;
     private String webEdit;
-
+    private BroadcastReceiver broadcastReceiver;
 
     @SuppressLint("JavascriptInterface")
     @Override
@@ -40,6 +42,19 @@ public class MainActivity extends AppCompatActivity {
         webView.addJavascriptInterface(new AndroidWebBridge(webView), "HybridApp");
         webView.loadUrl("file:///android_asset/index.html");
         webView.setWebViewClient(new WebViewClientClass());
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("test.com.action.TEST");
+
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if(intent.getStringExtra("result")!=null) {
+                    webView.loadUrl("javascript:set_context(\""+ webEdit +"\", \""+ intent.getStringExtra("result") +"\");");
+                }
+            }
+        };
+        registerReceiver(broadcastReceiver, intentFilter);
     }
 
     public void alertSetting(WebView webView) {
@@ -95,14 +110,6 @@ public class MainActivity extends AppCompatActivity {
             view.loadUrl(url);
             return true;
         }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(data.getStringExtra("result")!=null) {
-            webView.loadUrl("javascript:set_context(\""+ webEdit +"\", \""+ data.getStringExtra("result") +"\");");
-        }
-        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
