@@ -17,6 +17,8 @@ import java.util.List;
 public class CustomNumpadView extends KeyboardView {
     CustomOnKeyboardActionListener keyListener;
     Keyboard keyboard = null;
+    List<Keyboard.Key> keyList;
+    ArrayList<Integer> list;
 
     private keypad k;
 
@@ -24,9 +26,9 @@ public class CustomNumpadView extends KeyboardView {
         super(context, attrs);
         keyboard = new Keyboard(context, R.xml.qwerty);
 
-        List<Keyboard.Key> keyList =  keyboard.getKeys();
+        keyList =  keyboard.getKeys();
 
-        ArrayList<Integer> list = new ArrayList<Integer> (10);
+        list = new ArrayList<Integer> (10);
         for(int i=0; i<10; i++) {
             list.add(new Integer(i));
         }
@@ -70,7 +72,23 @@ public class CustomNumpadView extends KeyboardView {
             owner.dispatchKeyEvent(event);
             if((primaryCode >= 7 && primaryCode <= 16) || primaryCode == 67) {
                 k.onKey();
+                Collections.shuffle(list);
+
+                for(int i=0; i<9; i++) {
+                    keyList.get(i).codes[0] = list.get(i)+7;
+                    keyList.get(i).label = list.get(i) + "";
+                }
+                keyList.get(10).codes[0] = list.get(9)+7;
+                keyList.get(10).label = list.get(9) + "";
+
+                // 숫자 클릭 시 랜덤 배치 되도록,
+                // 랜덤 배치 되지만, 클릭된 숫자만 바뀐 숫자로 보여지고 나머지는 그대로 보여지고 클릭하면 변경된 숫자로 입력됨.
+                // 바뀐 배치 보여주기 필요.
+
+                // 여러개 눌리는 것처럼 보이도록,
+                // dispatchKeyEvent 사용?
             }
+
             if(primaryCode == 66)
                 k.onEnter();
         }
