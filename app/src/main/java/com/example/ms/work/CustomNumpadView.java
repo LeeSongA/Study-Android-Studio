@@ -1,6 +1,7 @@
 package com.example.ms.work;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -83,7 +84,7 @@ public class CustomNumpadView extends KeyboardView {
 
                 // 숫자 클릭 시 랜덤 배치 되도록,
                 // 랜덤 배치 되지만, 클릭된 숫자만 바뀐 숫자로 보여지고 나머지는 그대로 보여지고 클릭하면 변경된 숫자로 입력됨.
-                // 바뀐 배치 보여주기 필요.
+                // 바뀐 배치 보여주기 필요. 새로고침?
 
                 // 여러개 눌리는 것처럼 보이도록,
                 // dispatchKeyEvent 사용?
@@ -91,7 +92,7 @@ public class CustomNumpadView extends KeyboardView {
             if(primaryCode == 66)
                 k.onEnter();
         }
-
+        
         @Override
         public void onPress(int primaryCode) {
         }
