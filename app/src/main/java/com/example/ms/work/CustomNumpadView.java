@@ -5,7 +5,10 @@ import android.content.Context;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.KeyEvent;
+
+import java.util.List;
 
 /**
  * Created by user on 2018-01-03.
@@ -20,6 +23,12 @@ public class CustomNumpadView extends KeyboardView {
     public CustomNumpadView(Context context, AttributeSet attrs) {
         super(context, attrs);
         keyboard = new Keyboard(context, R.xml.qwerty);
+
+        List<Keyboard.Key> keyList =  keyboard.getKeys();
+
+//        Log.d("[test]", "keyList.get(2).codes.length: " + keyList.get(2).codes.length);
+        keyList.get(2).codes[0] = 8;
+        keyList.get(2).label = "1";
     }
 
     public void setKeypad(keypad k) {
