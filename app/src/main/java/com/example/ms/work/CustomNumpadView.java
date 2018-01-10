@@ -8,6 +8,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -26,9 +29,22 @@ public class CustomNumpadView extends KeyboardView {
 
         List<Keyboard.Key> keyList =  keyboard.getKeys();
 
-//        Log.d("[test]", "keyList.get(2).codes.length: " + keyList.get(2).codes.length);
-        keyList.get(2).codes[0] = 8;
-        keyList.get(2).label = "1";
+        ArrayList<Integer> list = new ArrayList<Integer> (10);
+        for(int i=0; i<10; i++) {
+            list.add(new Integer(i));
+        }
+        
+        Collections.shuffle(list);
+
+        for(int i=0; i<9; i++) {
+            keyList.get(i).codes[0] = list.get(i)+7;
+            keyList.get(i).label = list.get(i) + "";
+        }
+        keyList.get(10).codes[0] = list.get(9)+7;
+        keyList.get(10).label = list.get(9) + "";
+
+
+
     }
 
     public void setKeypad(keypad k) {
