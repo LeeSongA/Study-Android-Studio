@@ -76,9 +76,9 @@ public class CustomNumpadView extends KeyboardView {
             KeyEvent event = new KeyEvent(eventTime, eventTime, KeyEvent.ACTION_DOWN, primaryCode, 0, 0, 0, 0, KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE);
             owner.dispatchKeyEvent(event);
             if((primaryCode >= 7 && primaryCode <= 16) || primaryCode == 67) {
-                k.onKey();
-                Collections.shuffle(list);
+                k.onKey();                                            // 나머지 키 클릭하면 keypad의 onkey 함수 실행
 
+                Collections.shuffle(list);                           // 키 클릭시 랜덤 배치 기능
                 for(int i=0; i<9; i++) {
                     keyList.get(i).codes[0] = list.get(i)+7;
                     keyList.get(i).label = list.get(i) + "";
@@ -86,7 +86,7 @@ public class CustomNumpadView extends KeyboardView {
                 keyList.get(10).codes[0] = list.get(9)+7;
                 keyList.get(10).label = list.get(9) + "";
             }
-            if(primaryCode == 66)                                   // OK 키 클릭하면 keypad의 onEnter 함수 실행
+            if(primaryCode == 66)                                    // OK 키 클릭하면 keypad의 onEnter 함수 실행
                 k.onEnter();
         }
 
@@ -104,7 +104,7 @@ public class CustomNumpadView extends KeyboardView {
                     continue;
                 pressedKeys.add(i);
             }
-            if(index != 10)
+            if(index != 10)                                         // ?
                 pressedKeys.add(10);
 
             Collections.shuffle(pressedKeys);

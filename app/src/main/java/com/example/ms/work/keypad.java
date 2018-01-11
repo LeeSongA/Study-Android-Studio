@@ -29,21 +29,21 @@ public class keypad extends Activity {
         customNumpadView.setKeypad(this);
     }
 
-    public void onKey() {
+    public void onKey() {                                                                   // OK 키 외의 나머지 키 클릭 시 실행
         Intent intent = new Intent();
         intent.setAction("test.com.action.TEST");
-        sendBroadcast(intent.putExtra("result", editText.getText().toString()));
-        customNumpadView.setActionListenerActivity(keypad.this);
+        sendBroadcast(intent.putExtra("result", editText.getText().toString()));    // editText 내용을 브로드케스트에 전달
+        customNumpadView.setActionListenerActivity(keypad.this);                           //
     }
 
-    public void onEnter() {
-        Intent intent = new Intent();
+    public void onEnter() {                                                                 // OK 키 클릭 시 실행
+        Intent intent = new Intent();                                                        // intent 로 화면 전환
         intent.putExtra("result", editText.getText().toString());
         setResult(RESULT_OK, intent);
         finish();
     }
 
-    public void OnClose(View v) {
+    public void OnClose(View v) {                                                           // 닫기 버튼 클릭 시 실행
         Intent intent = new Intent();
         intent.getType();
         setResult(RESULT_OK, intent);

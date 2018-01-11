@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        webView = (WebView)findViewById(R.id.webview);                                          // 웹뷰 셋팅
+        webView = (WebView)findViewById(R.id.webview);                               // 웹뷰 셋팅
         webView.getSettings().setJavaScriptEnabled(true);
         alertSetting(webView);
 
