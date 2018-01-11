@@ -39,13 +39,13 @@ public class CustomNumpadView extends KeyboardView {
 
         Collections.shuffle(list);                                  // 리스트 섞기
 
-        for(int i=0; i<9; i++) {                                    // ?
+        for(int i=0; i<9; i++) {                                    // 9개의 숫자를 랜덤 배치
             keyList.get(i).codes[0] = list.get(i)+7;
             keyList.get(i).label = list.get(i) + "";
         }
-        keyList.get(10).codes[0] = list.get(9)+7;
+        keyList.get(10).codes[0] = list.get(9)+7;                  // 10번째 숫자 배치
         keyList.get(10).label = list.get(9) + "";
-        this.setPreviewEnabled(false);
+        this.setPreviewEnabled(false);                              // 미리보기 제거
     }
 
     public void setKeypad(keypad k) {
@@ -104,7 +104,7 @@ public class CustomNumpadView extends KeyboardView {
                     continue;
                 pressedKeys.add(i);
             }
-            if(index != 10)                                         // ?
+            if(index != 10)
                 pressedKeys.add(10);
 
             Collections.shuffle(pressedKeys);
@@ -117,8 +117,8 @@ public class CustomNumpadView extends KeyboardView {
         }
 
         @Override
-        public void onRelease(int primaryCode) {                   // ? 원상태로 돌리기?
-            for(int i=0,j; i<3; i++) {                              // ? 위에랑 동일한 이유
+        public void onRelease(int primaryCode) {                   // 클릭 되지 않은 상태로 돌리기
+            for(int i=0,j; i<3; i++) {
                 j = pressedKeys.get(i);
                 keyList.get(j).onReleased(true);
             }
