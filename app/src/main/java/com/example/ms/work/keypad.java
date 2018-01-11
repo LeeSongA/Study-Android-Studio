@@ -33,6 +33,7 @@ public class keypad extends Activity {
         Intent intent = new Intent();
         intent.setAction("test.com.action.TEST");
         sendBroadcast(intent.putExtra("result", editText.getText().toString()));
+        customNumpadView.setActionListenerActivity(keypad.this);
     }
 
     public void onEnter() {

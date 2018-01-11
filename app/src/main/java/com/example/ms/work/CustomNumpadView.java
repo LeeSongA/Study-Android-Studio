@@ -1,7 +1,6 @@
 package com.example.ms.work;
 
 import android.app.Activity;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -22,26 +21,31 @@ public class CustomNumpadView extends KeyboardView {
     ArrayList<Integer> list;
 
     private keypad k;
+    CustomNumpadView customNumpadView;
+    ArrayList<Integer> pressedKeys;
 
     public CustomNumpadView(Context context, AttributeSet attrs) {
         super(context, attrs);
         keyboard = new Keyboard(context, R.xml.qwerty);
 
-        keyList =  keyboard.getKeys();
+        customNumpadView = this;
         list = new ArrayList<Integer> (10);
-
-        for(int i=0; i<10; i++) {
+        pressedKeys = new ArrayList<Integer>();
+        keyList =  keyboard.getKeys();
+                                                                     // 키 랜덤 배치 기능
+        for(int i=0; i<10; i++) {                                   // 리스트에 0~9 추가
             list.add(new Integer(i));
         }
 
-        Collections.shuffle(list);
+        Collections.shuffle(list);                                  // 리스트 섞기
 
-        for(int i=0; i<9; i++) {
+        for(int i=0; i<9; i++) {                                    // ?
             keyList.get(i).codes[0] = list.get(i)+7;
             keyList.get(i).label = list.get(i) + "";
         }
         keyList.get(10).codes[0] = list.get(9)+7;
         keyList.get(10).label = list.get(9) + "";
+        this.setPreviewEnabled(false);
     }
 
     public void setKeypad(keypad k) {
@@ -81,24 +85,46 @@ public class CustomNumpadView extends KeyboardView {
                 }
                 keyList.get(10).codes[0] = list.get(9)+7;
                 keyList.get(10).label = list.get(9) + "";
-
-                // 숫자 클릭 시 랜덤 배치 되도록,
-                // 랜덤 배치 되지만, 클릭된 숫자만 바뀐 숫자로 보여지고 나머지는 그대로 보여지고 클릭하면 변경된 숫자로 입력됨.
-                // 바뀐 배치 보여주기 필요. 새로고침?
-
-                // 여러개 눌리는 것처럼 보이도록,
-                // dispatchKeyEvent 사용?
             }
-            if(primaryCode == 66)
+            if(primaryCode == 66)                                   // OK 키 클릭하면 keypad의 onEnter 함수 실행
                 k.onEnter();
         }
-        
+
         @Override
-        public void onPress(int primaryCode) {
+        public void onPress(int primaryCode) {                     // 키 클릭 시 여러개 키(총 4개의 키) 눌리는 기능
+            int index = 10;
+            for(int i=0; i<9; i++) {                                // 클릭된 키 위치 찾기
+                if(keyList.get(i).codes[0] == primaryCode) {
+                    index = i;
+                    break;
+                }
+            }
+            for(int i=0; i<9; i++) {                                // 클릭된 키 제외하고 리스트 생성
+                if(i == index)
+                    continue;
+                pressedKeys.add(i);
+            }
+            if(index != 10)
+                pressedKeys.add(10);
+
+            Collections.shuffle(pressedKeys);
+
+            for(int i=0, j; i<3; i++) {                             // 랜덤으로 3개의 키 추가적으로 눌림
+                j = pressedKeys.get(i);
+                keyList.get(j).onReleased(true);
+            }
+            customNumpadView.invalidateAllKeys();                 // 키 배치 갱신
         }
 
         @Override
-        public void onRelease(int primaryCode) {
+        public void onRelease(int primaryCode) {                   // ? 원상태로 돌리기?
+            for(int i=0,j; i<3; i++) {                              // ? 위에랑 동일한 이유
+                j = pressedKeys.get(i);
+                keyList.get(j).onReleased(true);
+            }
+            for(int i=0; i<9; i++)                                  // 클릭된 키 제외하고 생성된 리스트를 삭제
+                pressedKeys.remove(0);
+            customNumpadView.invalidateAllKeys();
         }
 
         @Override

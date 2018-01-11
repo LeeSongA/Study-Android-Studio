@@ -2,10 +2,12 @@
 <html>
     <head>
         <script language="javascript">
-            /* "Javascript -> Android call" */
+            /* Javascript -> Android call */
             function Event(id) {
                 window.HybridApp.setMessage(id);
             }
+
+            /* Android -> Javascript call */
             function set_context(id, name) {
                 document.getElementById(id).value = name;
             }

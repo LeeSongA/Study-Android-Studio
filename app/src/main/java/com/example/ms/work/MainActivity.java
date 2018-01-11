@@ -7,9 +7,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Handler;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final Handler handler = new Handler();
     WebView webView;
+    WebSettings webSettings;
     private String webEdit;
     private BroadcastReceiver broadcastReceiver;
 
@@ -30,14 +31,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        webView = (WebView)findViewById(R.id.webview);
+
+        webView = (WebView)findViewById(R.id.webview);                                          // 웹뷰 셋팅
         webView.getSettings().setJavaScriptEnabled(true);
         alertSetting(webView);
 
         String userAgent = webView.getSettings().getUserAgentString();
         webView.getSettings().setUserAgentString(userAgent+"HybridApp");
 
-        WebSettings webSettings = webView.getSettings();
+        webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new AndroidWebBridge(webView), "HybridApp");
         webView.loadUrl("file:///android_asset/index.html");
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         registerReceiver(broadcastReceiver, intentFilter);
     }
 
-    public void alertSetting(WebView webView) {
+    public void alertSetting(WebView webView) {                                       // alert 창 메소드
         final Context myApp = this;
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private class AndroidWebBridge {
+    private class AndroidWebBridge {                                                // 웹뷰로 안드로이드와 자바스크립트 연동
         private WebView webView;
 
         public AndroidWebBridge(WebView webView) {
