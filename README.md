@@ -1,6 +1,9 @@
-# Study-Android-Studio
-
+﻿# Study-Android-Studio
+[![Android](https://img.shields.io/badge/Java-Android-green.svg)]()
 <h1>1.Keypad_Project</h1>
+
+[![Keypad](https://raw.githubusercontent.com/LeeSongA/Study-Android-Studio/master/screenshot/keypad.png)]()
+
 랜덤배치
 참고
 
