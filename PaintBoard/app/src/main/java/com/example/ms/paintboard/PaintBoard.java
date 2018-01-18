@@ -42,7 +42,6 @@ public class PaintBoard extends View {
     @Override
     protected  void  onSizeChanged(int w, int h, int oldw, int oldh) {
         if(w >0 && h>0) {
-            // BitmapFactory 외부 이미지 파일을 불러올 때 사용
             // Bitmap.createBitmap 일반적으로 Bitmap 객체를 생성 시 사용
             // Bitmap.Config.ARGB_888 일반적인 색상적용
             bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);

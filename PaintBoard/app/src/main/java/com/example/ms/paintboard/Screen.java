@@ -29,13 +29,14 @@ public class Screen extends Activity {
     }
 
     public void btn_OK_event(View v) {
+        // Screen 에 있는 서명 html canvas 로 전달
     }
 
     public void btn_Clear_event(View v) {
-
+        // 지우기
     }
 
-    public void btn_Cancel_event(View v) {
+    public void btn_Cancel_event(View v) {      // Screen 화면 닫기
         Intent intent = new Intent();
         intent.getType();
         setResult(RESULT_OK, intent);

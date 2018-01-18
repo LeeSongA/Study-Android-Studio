@@ -15,6 +15,20 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+
+// 업무 내용
+// html canvas 클릭 시 안드로이드에서 Screen 창 띄우기
+// Screen 창에 서명하기(필압 처리)
+
+// 각 역할
+// MainActivity: webview 있는 기본 화면, 자바스크립트와 안드로이드 연동해 줌
+// Screen: PaintBoard 부분과 버튼 3개 있음
+// PaintBoard: 마우스로 그림 그리는 효과 처리
+
+// 문제점
+// html canvas 클릭 시 안드로이드에서 Screen 창이 보여지지 않음
+// PaintBoard 를 Screen에 연결?하는 것을 잘못한 거 같음
+
 public class MainActivity extends AppCompatActivity {
 
     private final Handler handler = new Handler();
@@ -41,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClientClass());
     }
 
-    public void alertSetting(WebView webView) {
+    public void alertSetting(WebView webView) {                         // alert 창
         final Context myApp = this;
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
@@ -63,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private class AndroidBridge {
+    private class AndroidBridge {                                       // 자바스크립트와 안드로이드 연동
         private WebView webView;
 
         public AndroidBridge(WebView webView) {
