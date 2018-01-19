@@ -23,9 +23,14 @@ http://unikys.tistory.com/276
 
 http://unikys.tistory.com/287
 
-<h2>2. PaintBoard_Project</h2>
+<h2>2. SignPad_Project</h2>
 
 This project used Samsung S-Pen SDK wrapper library.
 
 첨가할 자료
 https://github.com/szimek/signature_pad
+
+참고 자료
+https://medium.com/square-corner-blog/smooth-signatures-9d92df119ff8
+
+https://medium.com/square-corner-blog/smoother-signatures-be64515adb33
