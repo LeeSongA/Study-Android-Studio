@@ -16,7 +16,7 @@
         android:textColor="#fff"
         android:textSize="20sp" />
 
-    <com.example.ms.paintboard.PaintBoard
+    <com.example.ms.signpad.CustomSignPad
         android:id="@+id/SignPad"
         android:layout_width="300dp"
         android:layout_height="300dp" />
