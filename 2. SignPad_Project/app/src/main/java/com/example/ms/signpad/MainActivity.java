@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public void alertSetting(WebView webView) {                         // alert 창
         final Context myApp = this;
         webView.setWebChromeClient(new WebChromeClient() {
+
             @Override
             public boolean onJsAlert(WebView webView, String url, String message, final android.webkit.JsResult result) {
                 new AlertDialog.Builder(myApp)

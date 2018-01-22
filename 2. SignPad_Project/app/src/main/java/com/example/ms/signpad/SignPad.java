@@ -15,6 +15,7 @@ public class SignPad extends Activity {
 
     private CustomSignPad customSignPad;
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);      // 타이틀바 없애기

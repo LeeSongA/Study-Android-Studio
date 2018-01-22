@@ -8,6 +8,10 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 /**
  * Created by ms on 2018-01-18.
  */
@@ -18,6 +22,9 @@ public class CustomSignPad extends View {
 
     Bitmap bitmap;
     Canvas canvas;
+
+    File file;
+    FileOutputStream fileOutputStream;
 
     float curX, curY;
     float oldX, oldY;
@@ -60,6 +67,7 @@ public class CustomSignPad extends View {
         }
     }
 
+
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {      // 입력 이벤트 발생
         int action = motionEvent.getAction();
@@ -82,5 +90,26 @@ public class CustomSignPad extends View {
         oldY = curY;
 
         return true;
+    }
+
+    private void saveSign(Bitmap bitmap) {
+        file = new File("Sign.jpg");
+        fileOutputStream = null;
+
+        try {
+            file.createNewFile();
+            fileOutputStream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
+
+            fileOutputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                fileOutputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
