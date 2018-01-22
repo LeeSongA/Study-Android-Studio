@@ -21,8 +21,8 @@ import android.webkit.WebViewClient;
 
 // 설명
 // MainActivity: webview 있는 기본 화면, 자바스크립트와 안드로이드 연동해 줌
-// Screen: PaintBoard 부분과 버튼 3개 있음
-// PaintBoard: 서명 작성
+// SignPad: CustomSignPad 부분과 버튼 3개 있음
+// CustomSignPad: 서명 작성
 
 public class MainActivity extends AppCompatActivity {
 
