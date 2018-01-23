@@ -15,14 +15,15 @@ import java.util.List;
  */
 
 public class CustomNumpadView extends KeyboardView {
-    CustomOnKeyboardActionListener keyListener;
-    Keyboard keyboard = null;
-    List<Keyboard.Key> keyList;
-    ArrayList<Integer> list;
+    private ArrayList<Integer> list;
+    private ArrayList<Integer> pressedKeys;
+
+    private CustomNumpadView customNumpadView;
+    private CustomOnKeyboardActionListener keyListener;
 
     private keypad k;
-    CustomNumpadView customNumpadView;
-    ArrayList<Integer> pressedKeys;
+    private Keyboard keyboard = null;
+    private List<Keyboard.Key> keyList;
 
     public CustomNumpadView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -32,19 +33,12 @@ public class CustomNumpadView extends KeyboardView {
         list = new ArrayList<Integer> (10);
         pressedKeys = new ArrayList<Integer>();
         keyList =  keyboard.getKeys();
-                                                                     // 키 랜덤 배치 기능
-        for(int i=0; i<10; i++) {                                   // 리스트에 0~9 추가
-            list.add(new Integer(i));
+
+        for(int i=0; i<10; i++) {                                   // 키 랜덤 배치 기능
+            list.add(new Integer(i));                               // 리스트에 0~9 추가
         }
 
-        Collections.shuffle(list);                                  // 리스트 섞기
-
-        for(int i=0; i<9; i++) {                                    // 9개의 숫자를 랜덤 배치
-            keyList.get(i).codes[0] = list.get(i)+7;
-            keyList.get(i).label = list.get(i) + "";
-        }
-        keyList.get(10).codes[0] = list.get(9)+7;                  // 10번째 숫자 배치
-        keyList.get(10).label = list.get(9) + "";
+        this.setRandomKeypad();                                      // 키 랜덤 배치
         this.setPreviewEnabled(false);                              // 미리보기 제거
     }
 
@@ -56,6 +50,17 @@ public class CustomNumpadView extends KeyboardView {
         keyListener = new CustomOnKeyboardActionListener(act);
         this.setOnKeyboardActionListener(keyListener);
         this.setKeyboard(keyboard);
+    }
+
+    public void setRandomKeypad() {
+        Collections.shuffle(list);                                  // 리스트 섞기
+
+        for(int i=0; i<9; i++) {                                    // 9개의 숫자를 랜덤 배치
+            keyList.get(i).codes[0] = list.get(i)+7;
+            keyList.get(i).label = list.get(i) + "";
+        }
+        keyList.get(10).codes[0] = list.get(9)+7;                  // 10번째 숫자 배치
+        keyList.get(10).label = list.get(9) + "";
     }
 
     @Override
@@ -78,13 +83,7 @@ public class CustomNumpadView extends KeyboardView {
             if((primaryCode >= 7 && primaryCode <= 16) || primaryCode == 67) {
                 k.onKey();                                            // 나머지 키 클릭하면 keypad의 onkey 함수 실행
 
-                Collections.shuffle(list);                           // 키 클릭시 랜덤 배치 기능
-                for(int i=0; i<9; i++) {
-                    keyList.get(i).codes[0] = list.get(i)+7;
-                    keyList.get(i).label = list.get(i) + "";
-                }
-                keyList.get(10).codes[0] = list.get(9)+7;
-                keyList.get(10).label = list.get(9) + "";
+                customNumpadView.setRandomKeypad();                // 키 클릭시 랜덤 배치 기능
             }
             if(primaryCode == 66)                                    // OK 키 클릭하면 keypad의 onEnter 함수 실행
                 k.onEnter();

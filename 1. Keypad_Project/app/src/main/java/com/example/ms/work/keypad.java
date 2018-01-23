@@ -32,8 +32,7 @@ public class keypad extends Activity {
     public void onKey() {                                                                   // OK 키 외의 나머지 키 클릭 시 실행
         Intent intent = new Intent();
         intent.setAction("test.com.action.TEST");
-        sendBroadcast(intent.putExtra("result", editText.getText().toString()));    // editText 내용을 브로드케스트에 전달
-        customNumpadView.setActionListenerActivity(keypad.this);                           //
+        sendBroadcast(intent.putExtra("result", editText.getText().toString()));      // editText 내용을 브로드케스트에 전달
     }
 
     public void onEnter() {                                                                 // OK 키 클릭 시 실행

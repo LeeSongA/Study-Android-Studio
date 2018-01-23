@@ -18,6 +18,22 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+// 1차 코드리뷰
+
+// code convention
+// 클래스명의 첫 글자는 대문자
+// 접근지정자는 반드시 붙일 것.
+
+// UI
+// 비밀번호 입력 시에도 editText 내용이 보임
+
+// 리팩토링
+// keypad.java onkey() 중 4번째 줄
+// 랜덤 배치 반복 부분
+
+// handler 불필요?
+
+
 public class MainActivity extends AppCompatActivity {
 
     private final Handler handler = new Handler();
