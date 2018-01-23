@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.os.Environment;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -67,9 +68,8 @@ public class CustomSignPad extends View {
         }
     }
 
-
     @Override
-    public boolean onTouchEvent(MotionEvent motionEvent) {      // 입력 이벤트 발생
+    public boolean onTouchEvent(MotionEvent motionEvent) {                      // 입력 이벤트 발생
         int action = motionEvent.getAction();
         curX = motionEvent.getX();
         curY = motionEvent.getY();
@@ -92,21 +92,24 @@ public class CustomSignPad extends View {
         return true;
     }
 
-    private void saveSign(Bitmap bitmap) {
-        file = new File("Sign.jpg");
+    public void saveSign() {
+        File sdcard = Environment.getExternalStorageDirectory();
+        file = new File("/sdcard","Sign.jpg");
         fileOutputStream = null;
 
         try {
-            file.createNewFile();
             fileOutputStream = new FileOutputStream(file);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-
+            setDrawingCacheEnabled(true);
+            setDrawingCacheBackgroundColor(0xfffafafa);
+            getDrawingCache().compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
+            setDrawingCacheEnabled(false);
             fileOutputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
-                fileOutputStream.close();
+                if(fileOutputStream != null)
+                    fileOutputStream.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

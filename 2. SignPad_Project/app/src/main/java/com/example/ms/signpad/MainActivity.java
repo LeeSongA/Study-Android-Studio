@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private final Handler handler = new Handler();
     WebView webView;
     WebSettings webSettings;
+    String id;
 
     @SuppressLint("JavascriptInterface")
     @Override
@@ -46,11 +47,23 @@ public class MainActivity extends AppCompatActivity {
         webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new AndroidBridge(webView), "SignPad");
-        webView.loadUrl("file:///android_asset/index.html");        // Android에서 Javascript함수 호출
+        webView.loadUrl("file:///android_asset/index.html");            // Android에서 Javascript함수 호출
         webView.setWebViewClient(new WebViewClientClass());
     }
 
-    public void alertSetting(WebView webView) {                         // alert 창
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == RESULT_OK) {
+            if(data.getStringExtra("result").equals("Save")){
+                webView.loadUrl("javascript:Save(\""+id+"\");");
+            }
+            if(data.getStringExtra("result").equals("Clear")){
+                webView.loadUrl("javascript:Clear(\""+id+"\");");
+            }
+        }
+    }
+
+    public void alertSetting(WebView webView) {                             // alert 창
         final Context myApp = this;
         webView.setWebChromeClient(new WebChromeClient() {
 
@@ -86,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     Log.e("SignPad", arg);
+                    id = arg;
                     Intent intent = new Intent(
                             getApplicationContext(),
                             SignPad.class);

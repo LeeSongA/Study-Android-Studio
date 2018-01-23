@@ -15,38 +15,37 @@ public class SignPad extends Activity {
 
     private CustomSignPad customSignPad;
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);      // 타이틀바 없애기
         setContentView(R.layout.activity_signpad);
 
-        LinearLayout linearLayout = new LinearLayout(this);
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.linearLayout);
 
         customSignPad = new CustomSignPad(SignPad.this);
         linearLayout.addView(customSignPad);
-
     }
 
-    public void btn_OK_event(View v) {          // Screen 에 있는 서명 html canvas 로 전달
+    public void btn_Save_event(View v) {      // 서명 html canvas 로 전달
+        customSignPad.saveSign();
         Intent intent = new Intent();
-        intent.putExtra("result", "Close Popup");
+        intent.putExtra("result", "Save");
         setResult(RESULT_OK, intent);
         finish();
     }
 
-    public void btn_Clear_event(View v) {
-        // 지우기
+    public void btn_Clear_event(View v) {       // 지우기
+        Intent intent = new Intent();
+        intent.putExtra("result", "Clear");
+        setResult(RESULT_OK, intent);
+        finish();
     }
-
 
     public void btn_Cancel_event(View v) {      // Screen 화면 닫기
         Intent intent = new Intent();
-        intent.getType();
+        intent.putExtra("result", "Cancel");
         setResult(RESULT_OK, intent);
         finish();
     }
-
 }
 

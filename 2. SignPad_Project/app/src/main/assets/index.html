@@ -5,14 +5,33 @@
         function Event(id) {
             window.SignPad.callAndroid(id);
         }
+        function Save(id) {
+            var canvas = document.getElementById(id);
+            var context = canvas.getContext("2d");
+
+            var image = new Image();
+            image.src = "/sdcard/Sign.jpg";
+
+            image.onload = function() {
+                context.drawImage(image, 0, 0, canvas.width, canvas.height);
+            };
+        }
+        function Clear(id) {
+            var canvas = documennt.getElementById(id);
+            var context = canvas.getContext("2d");
+
+            var image = new Image();
+        }
     </script>
     <style>
         .canvas {border: 1px solid black};
     </style>
 </head>
 <body>
-<canvas class="canvas" id="canvas1" width="300" height="40" onclick="Event(this.id)"></canvas>
-<canvas class="canvas" id="canvas2" width="300" height="40" onclick="Event(this.id)"></canvas>
-<canvas class="canvas" id="canvas3" width="300" height="40" onclick="Event(this.id)"></canvas>
+    <canvas class="canvas" id="canvas1" width="180" height="60" onclick="Event(this.id)"></canvas>
+    </br>
+    <canvas class="canvas" id="canvas2" width="180" height="60" onclick="Event(this.id)"></canvas>
+    </br>
+    <canvas class="canvas" id="canvas3" width="180" height="60" onclick="Event(this.id)"></canvas>
 </body>
 </html>
