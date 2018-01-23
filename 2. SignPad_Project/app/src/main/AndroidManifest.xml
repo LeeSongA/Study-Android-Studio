@@ -3,6 +3,7 @@
     package="com.example.ms.signpad">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>"
 
     <application
         android:allowBackup="true"

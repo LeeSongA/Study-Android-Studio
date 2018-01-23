@@ -16,13 +16,15 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 // 업무 내용
-// html canvas 클릭 시 안드로이드에서 Screen 창 띄우기
-// Screen 창에 서명하기(필압 처리)
+// html canvas 클릭 시 안드로이드에서 SignPad 창 띄우기
+// SignPad 창에 서명하기(필압 효과 포함)
 
 // 설명
-// MainActivity: webview 있는 기본 화면, 자바스크립트와 안드로이드 연동해 줌
-// SignPad: CustomSignPad 부분과 버튼 3개 있음
-// CustomSignPad: 서명 작성
+// MainActivity: webview 있는 기본 화면, 자바스크립트와 안드로이드 연동
+// SignPad: CustomSignView 부분과 버튼 3개 있음
+// CustomSignView: 서명 작성
+// SpenActivity: Spen SDK 이용해서 필압 효과
+// SignatureView
 
 public class MainActivity extends AppCompatActivity {
 

@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 
 public class SignPad extends Activity {
 
-    private CustomSignPad customSignPad;
+    private CustomSignView customSignView;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +22,12 @@ public class SignPad extends Activity {
 
         LinearLayout linearLayout = (LinearLayout)findViewById(R.id.linearLayout);
 
-        customSignPad = new CustomSignPad(SignPad.this);
-        linearLayout.addView(customSignPad);
+        customSignView = new CustomSignView(SignPad.this);
+        linearLayout.addView(customSignView);
     }
 
     public void btn_Save_event(View v) {      // 서명 html canvas 로 전달
-        customSignPad.saveSign();
+        customSignView.saveSign();
         Intent intent = new Intent();
         intent.putExtra("result", "Save");
         setResult(RESULT_OK, intent);
