@@ -3,26 +3,36 @@ package com.example.ms.work;
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Handler;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
-import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+// 1차 코드리뷰
+
+// code convention
+// 클래스명의 첫 글자는 대문자
+// 접근지정자는 반드시 붙일 것.
+
+// UI
+// 비밀번호 입력 시에도 editText 내용이 보임
+
+// 리팩토링
+// keypad.java onkey() 중 4번째 줄
+// 랜덤 배치 반복 부분
+
+// handler 불필요
+
 public class MainActivity extends AppCompatActivity {
 
-    private final Handler handler = new Handler();
-    WebView webView;
-    WebSettings webSettings;
+    private WebView webView;
+    private WebSettings webSettings;
     private String webEdit;
     private BroadcastReceiver broadcastReceiver;
 
@@ -34,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
         webView = (WebView)findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
-        alertSetting(webView);
 
         String userAgent = webView.getSettings().getUserAgentString();
         webView.getSettings().setUserAgentString(userAgent+"HybridApp");
@@ -52,35 +61,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onReceive(Context context, Intent intent) {
                 if(intent.getStringExtra("result")!=null) {
-                    webView.loadUrl("javascript:set_context(\""+ webEdit +"\", \""+ intent.getStringExtra("result") +"\");");
+                    webView.loadUrl("javascript:set_context('"+ webEdit +"', '"+ intent.getStringExtra("result") +"');");
                 }
             }
         };
         registerReceiver(broadcastReceiver, intentFilter);
-    }
-
-    public void alertSetting(WebView webView) {                                       // alert 창 메소드
-        final Context myApp = this;
-        webView.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public boolean onJsAlert(WebView webView1, String url, String message, final android.webkit.JsResult result) {
-                new AlertDialog.Builder(myApp)
-                        .setTitle(("Keypad"))
-                        .setMessage(message)
-                        .setPositiveButton(android.R.string.ok,
-                                new AlertDialog.OnClickListener()
-                                {
-                                    public void onClick(DialogInterface dialog, int which)
-                                    {
-                                        result.confirm();
-                                    }
-                                })
-                        .setCancelable(false)
-                        .create()
-                        .show();
-                return true;
-            };
-        });
     }
 
     private class AndroidWebBridge {                                                // 웹뷰로 안드로이드와 자바스크립트 연동
@@ -92,17 +77,12 @@ public class MainActivity extends AppCompatActivity {
 
         @JavascriptInterface
         public void setMessage(final String arg) {
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    Log.e("HybridApp", arg);
-                    webEdit = arg;
-                    Intent intent = new Intent(
-                            getApplicationContext(),
-                            keypad.class);
-                    startActivityForResult(intent, 201);
-                }
-            });
+            Log.e("HybridApp", arg);
+            webEdit = arg;
+            Intent intent = new Intent(
+                    getApplicationContext(),
+                    keypad.class);
+            startActivityForResult(intent, 201);
         }
     }
 
@@ -120,6 +100,5 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 }
-
 
 
