@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 
-public class keypad extends Activity {
+public class Keypad extends Activity {
 
     private EditText editText;
     private CustomNumpadView customNumpadView;
@@ -25,7 +25,7 @@ public class keypad extends Activity {
         editText.setInputType(0);
 
         customNumpadView = (CustomNumpadView) findViewById(R.id.numpadView);
-        customNumpadView.setActionListenerActivity(keypad.this);
+        customNumpadView.setActionListenerActivity(Keypad.this);
         customNumpadView.setKeypad(this);
     }
 

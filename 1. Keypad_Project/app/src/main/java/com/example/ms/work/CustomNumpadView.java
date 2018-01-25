@@ -21,7 +21,7 @@ public class CustomNumpadView extends KeyboardView {
     private CustomNumpadView customNumpadView;
     private CustomOnKeyboardActionListener keyListener;
 
-    private keypad k;
+    private Keypad k;
     private Keyboard keyboard = null;
     private List<Keyboard.Key> keyList;
 
@@ -42,7 +42,7 @@ public class CustomNumpadView extends KeyboardView {
         this.setPreviewEnabled(false);                              // 미리보기 제거
     }
 
-    public void setKeypad(keypad k) {
+    public void setKeypad(Keypad k) {
         this.k = k;
     }
 

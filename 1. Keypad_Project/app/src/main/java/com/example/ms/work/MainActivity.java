@@ -28,7 +28,7 @@ import android.webkit.WebViewClient;
 // 비밀번호 입력 시에도 editText 내용이 보임
 
 // 리팩토링
-// keypad.java onkey() 중 4번째 줄
+// Keypad.java onkey() 중 4번째 줄
 // 랜덤 배치 반복 부분
 
 // handler 불필요?
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     webEdit = arg;
                     Intent intent = new Intent(
                             getApplicationContext(),
-                            keypad.class);
+                            Keypad.class);
                     startActivityForResult(intent, 201);
                 }
             });
