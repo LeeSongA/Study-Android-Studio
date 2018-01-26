@@ -46,7 +46,7 @@ public class SignatureView extends View {
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeWidth(5f);
+        paint.setStrokeWidth(STROKE_WIDTH);
     }
 
     /**
@@ -77,7 +77,6 @@ public class SignatureView extends View {
                 return true;
 
             case MotionEvent.ACTION_MOVE:
-
             case MotionEvent.ACTION_UP:
                 // Start tracking the dirty region.
                 resetDirtyRect(eventX, eventY);
@@ -91,7 +90,6 @@ public class SignatureView extends View {
                     expandDirtyRect(historicalX, historicalY);
                     path.lineTo(historicalX, historicalY);
                 }
-
                 // After replaying history, connect the line to the touch point.
                 path.lineTo(eventX, eventY);
                 break;
@@ -99,14 +97,13 @@ public class SignatureView extends View {
             default:
                 return false;
         }
-
         // Include half the stroke width to avoid clipping.
         invalidate(
-                (int) (dirtyRect.left - HALF_STROKE_WIDTH),
-                (int) (dirtyRect.top - HALF_STROKE_WIDTH),
-                (int) (dirtyRect.right + HALF_STROKE_WIDTH),
-                (int) (dirtyRect.bottom + HALF_STROKE_WIDTH));
-
+            (int) (dirtyRect.left - HALF_STROKE_WIDTH),
+            (int) (dirtyRect.top - HALF_STROKE_WIDTH),
+            (int) (dirtyRect.right + HALF_STROKE_WIDTH),
+            (int) (dirtyRect.bottom + HALF_STROKE_WIDTH)
+        );
         lastTouchX = eventX;
         lastTouchY = eventY;
         return true;
@@ -128,7 +125,6 @@ public class SignatureView extends View {
             dirtyRect.bottom = historicalY;
         }
     }
-
     /**
      * Resets the dirty region when the motion event occurs.
      */
@@ -140,6 +136,6 @@ public class SignatureView extends View {
         dirtyRect.top = Math.min(lastTouchY, eventY);
         dirtyRect.bottom = Math.max(lastTouchY, eventY);
     }
-
-
 }
+
+
