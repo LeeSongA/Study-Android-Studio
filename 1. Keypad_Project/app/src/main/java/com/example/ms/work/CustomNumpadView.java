@@ -34,8 +34,8 @@ public class CustomNumpadView extends KeyboardView {
         pressedKeys = new ArrayList<Integer>();
         keyList =  keyboard.getKeys();
 
-        for(int i=0; i<10; i++) {                                   // 키 랜덤 배치 기능
-            list.add(new Integer(i));                               // 리스트에 0~9 추가
+        for(int i=0; i<10; i++) {
+            list.add(new Integer(i));                                // 키 랜덤 배치 하기 위해서 리스트에 0~9 추가
         }
 
         this.setRandomKeypad();                                      // 키 랜덤 배치
@@ -81,7 +81,7 @@ public class CustomNumpadView extends KeyboardView {
             KeyEvent event = new KeyEvent(eventTime, eventTime, KeyEvent.ACTION_DOWN, primaryCode, 0, 0, 0, 0, KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE);
             owner.dispatchKeyEvent(event);
             if((primaryCode >= 7 && primaryCode <= 16) || primaryCode == 67) {
-                k.onKey();                                            // 나머지 키 클릭하면 keypad의 onkey 함수 실행
+                k.onKey(primaryCode);                                            // 나머지 키 클릭하면 keypad의 onkey 함수 실행
 
                 customNumpadView.setRandomKeypad();                // 키 클릭시 랜덤 배치 기능
             }

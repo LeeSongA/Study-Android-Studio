@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Handler;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -36,7 +35,6 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final Handler handler = new Handler();
     WebView webView;
     WebSettings webSettings;
     private String webEdit;
@@ -61,18 +59,18 @@ public class MainActivity extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/index.html");
         webView.setWebViewClient(new WebViewClientClass());
 
-        IntentFilter intentFilter = new IntentFilter();
+        IntentFilter intentFilter = new IntentFilter();                                 // 브로드캐스트의 액션을 등록하기 위한 인텐트 필터
         intentFilter.addAction("test.com.action.TEST");
 
-        broadcastReceiver = new BroadcastReceiver() {
+        broadcastReceiver = new BroadcastReceiver() {                                // 동적 리시버 구현
             @Override
             public void onReceive(Context context, Intent intent) {
                 if(intent.getStringExtra("result")!=null) {
-                    webView.loadUrl("javascript:set_context(\""+ webEdit +"\", \""+ intent.getStringExtra("result") +"\");");
+                    webView.loadUrl("javascript:set_context('"+ webEdit +"', '"+ intent.getIntExtra("result", -1) +"');");
                 }
             }
         };
-        registerReceiver(broadcastReceiver, intentFilter);
+        registerReceiver(broadcastReceiver, intentFilter);                           // 리시버 등록
     }
 
     public void alertSetting(WebView webView) {                                       // alert 창 메소드
@@ -108,17 +106,12 @@ public class MainActivity extends AppCompatActivity {
 
         @JavascriptInterface
         public void setMessage(final String arg) {
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    Log.e("HybridApp", arg);
-                    webEdit = arg;
-                    Intent intent = new Intent(
-                            getApplicationContext(),
-                            Keypad.class);
-                    startActivityForResult(intent, 201);
-                }
-            });
+            Log.e("HybridApp", arg);
+            webEdit = arg;
+            Intent intent = new Intent(
+                    getApplicationContext(),
+                    Keypad.class);
+            startActivityForResult(intent, 201);
         }
     }
 
@@ -128,6 +121,11 @@ public class MainActivity extends AppCompatActivity {
             view.loadUrl(url);
             return true;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
