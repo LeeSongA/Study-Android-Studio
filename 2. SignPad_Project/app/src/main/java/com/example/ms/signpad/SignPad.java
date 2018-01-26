@@ -30,17 +30,17 @@ import java.io.IOException;
  */
 
 public class SignPad extends Activity {
-    private Context mContext;
-    private SpenNoteDoc mSpenNoteDoc;
-    private SpenPageDoc mSpenPageDoc;
-    private SpenSurfaceView mSpenSurfaceView;
+    private Context context;
+    private SpenNoteDoc spenNoteDoc;
+    private SpenPageDoc spenPageDoc;
+    private SpenSurfaceView spenSurfaceView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);      // 타이틀바 없애기
         setContentView(R.layout.activity_signpad);
-        mContext = this;
+        context = this;
 
         // Initialize Spen
         boolean isSpenFeatureEnabled = false;
@@ -53,7 +53,7 @@ public class SignPad extends Activity {
                 return;
             }
         } catch (Exception e1) {
-            Toast.makeText(mContext, "Cannot initialize Spen.",
+            Toast.makeText(context, "Cannot initialize Spen.",
                     Toast.LENGTH_SHORT).show();
             e1.printStackTrace();
             finish();
@@ -61,24 +61,25 @@ public class SignPad extends Activity {
 
         // Create Spen View
         LinearLayout spenViewLayout = (LinearLayout) findViewById(R.id.linearLayout);
-        mSpenSurfaceView = new SpenSurfaceView(mContext);
-        if (mSpenSurfaceView == null) {
-            Toast.makeText(mContext, "Cannot create new SpenView.",
+        spenSurfaceView = new SpenSurfaceView(context);
+        if (spenSurfaceView == null) {
+            Toast.makeText(context, "Cannot create new SpenView.",
                     Toast.LENGTH_SHORT).show();
             finish();
         }
-        spenViewLayout.addView(mSpenSurfaceView);
+        spenViewLayout.addView(spenSurfaceView);
 
         // Get the dimension of the device screen.
         Display display = getWindowManager().getDefaultDisplay();
         Rect rect = new Rect();
         display.getRectSize(rect);
+
         // Create SpenNoteDoc
         try {
-            mSpenNoteDoc =
-                    new SpenNoteDoc(mContext, rect.width(), rect.height());
+            spenNoteDoc =
+                    new SpenNoteDoc(context, rect.width(), rect.height());
         } catch (IOException e) {
-            Toast.makeText(mContext, "Cannot create new NoteDoc.",
+            Toast.makeText(context, "Cannot create new NoteDoc.",
                     Toast.LENGTH_SHORT).show();
             e.printStackTrace();
             finish();
@@ -86,29 +87,30 @@ public class SignPad extends Activity {
             e.printStackTrace();
             finish();
         }
+
         // Add a Page to NoteDoc, get an instance, and set it to the member variable.
-        mSpenPageDoc = mSpenNoteDoc.appendPage();
-        mSpenPageDoc.setBackgroundColor(0xFFFFFFFF);
-        mSpenPageDoc.clearHistory();
+        spenPageDoc = spenNoteDoc.appendPage();
+        spenPageDoc.setBackgroundColor(0xFFFFFFFF);
+        spenPageDoc.clearHistory();
+
         // Set PageDoc to View.
-        mSpenSurfaceView.setPageDoc(mSpenPageDoc, true);
+        spenSurfaceView.setPageDoc(spenPageDoc, true);
 
         if(isSpenFeatureEnabled == false) {
-            mSpenSurfaceView.setToolTypeAction(SpenSurfaceView.TOOL_FINGER, SpenSurfaceView.ACTION_STROKE);
-            Toast.makeText(mContext,
+            spenSurfaceView.setToolTypeAction(SpenSurfaceView.TOOL_FINGER, SpenSurfaceView.ACTION_STROKE);
+            Toast.makeText(context,
                     "Device does not support Spen. \n You can draw stroke by finger.",
                     Toast.LENGTH_SHORT).show();
         }
     }
 
     private boolean processUnsupportedException(SsdkUnsupportedException e) {
-
         e.printStackTrace();
         int errType = e.getType();
         // If the device is not a Samsung device or if the device does not support Pen.
         if (errType == SsdkUnsupportedException.VENDOR_NOT_SUPPORTED
                 || errType == SsdkUnsupportedException.DEVICE_NOT_SUPPORTED) {
-            Toast.makeText(mContext, "This device does not support Spen.",
+            Toast.makeText(context, "This device does not support Spen.",
                     Toast.LENGTH_SHORT).show();
             finish();
         }
@@ -142,7 +144,7 @@ public class SignPad extends Activity {
 
     private void showAlertDialog(String msg, final boolean closeActivity) {
 
-        AlertDialog.Builder dlg = new AlertDialog.Builder(mContext);
+        AlertDialog.Builder dlg = new AlertDialog.Builder(context);
         dlg.setIcon(getResources().getDrawable(
                 android.R.drawable.ic_dialog_alert));
         dlg.setTitle("Upgrade Notification")
@@ -191,18 +193,18 @@ public class SignPad extends Activity {
     protected void onDestroy() {
         super.onDestroy();
 
-        if (mSpenSurfaceView != null) {
-            mSpenSurfaceView.close();
-            mSpenSurfaceView = null;
+        if (spenSurfaceView != null) {
+            spenSurfaceView.close();
+            spenSurfaceView = null;
         }
 
-        if(mSpenNoteDoc != null) {
+        if(spenNoteDoc != null) {
             try {
-                mSpenNoteDoc.close();
+                spenNoteDoc.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            mSpenNoteDoc = null;
+            spenNoteDoc = null;
         }
     };
 
@@ -231,7 +233,7 @@ public class SignPad extends Activity {
     public String saveSign() {
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            mSpenSurfaceView.captureCurrentView(true).compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+            spenSurfaceView.captureCurrentView(true).compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
             return Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
         } catch(Exception e) {
             e.printStackTrace();

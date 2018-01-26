@@ -18,9 +18,9 @@ import android.webkit.WebViewClient;
 // 설명
 // MainActivity: webview 있는 기본 화면, 자바스크립트와 안드로이드 연동
 // SignPad: Spen SDK 이용해서 필압 효과
+// libs 폴더에 jsoup-1.8.2.jar  pen-v5.0.0_full.aar  sdk-v1.0.0.jar 있음
 
 public class MainActivity extends AppCompatActivity {
-
     WebView webView;
     WebSettings webSettings;
     String id;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 webView.loadUrl("javascript:Save('"+id+"', '"+base64_image+"');");
             }
             if(data.getStringExtra("result").equals("Clear")){
-                webView.loadUrl("javascript:Clear(\""+id+"\");");
+                webView.loadUrl("javascript:Clear('"+id+"');");
             }
         }
     }
