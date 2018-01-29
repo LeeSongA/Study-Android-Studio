@@ -47,13 +47,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String base64_image = data.getStringExtra("data");
-        if(resultCode == RESULT_OK) {
-            if(data.getStringExtra("result").equals("Save")){
-                webView.loadUrl("javascript:Save('"+id+"', '"+base64_image+"');");
-            }
-            if(data.getStringExtra("result").equals("Clear")){
-                webView.loadUrl("javascript:Clear('"+id+"');");
+        if(data != null) {
+            String base64_image = data.getStringExtra("data");
+            if (resultCode == RESULT_OK) {
+                if (data.getStringExtra("result").equals("Save")) {
+                    webView.loadUrl("javascript:Save('" + id + "', '" + base64_image + "');");
+                }
+                if (data.getStringExtra("result").equals("Clear")) {
+                    webView.loadUrl("javascript:Clear('" + id + "');");
+                }
             }
         }
     }
