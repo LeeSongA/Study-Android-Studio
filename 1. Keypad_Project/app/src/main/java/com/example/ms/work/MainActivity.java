@@ -27,7 +27,7 @@ import android.webkit.WebViewClient;
 // Keypad.java onkey() 중 4번째 줄
 // 랜덤 배치 반복 부분
 
-// handler 불필요?
+// handler 불필요
 
 
 public class MainActivity extends AppCompatActivity {
@@ -61,8 +61,12 @@ public class MainActivity extends AppCompatActivity {
         broadcastReceiver = new BroadcastReceiver() {                                // 동적 리시버 구현
             @Override
             public void onReceive(Context context, Intent intent) {
-                if(intent.getStringExtra("result")!=null) {
-                    webView.loadUrl("javascript:set_context('"+ webEdit +"', '"+ intent.getIntExtra("result", -1) +"');");
+                if(intent != null) {
+                    int result = intent.getIntExtra("result", -1);
+                    if(result == 60)
+                        webView.loadUrl("javascript:clear_context('"+ webEdit +"');");
+                    else
+                        webView.loadUrl("javascript:set_context('"+ webEdit +"', '"+ intent.getIntExtra("result", -1) +"');");
                 }
             }
         };

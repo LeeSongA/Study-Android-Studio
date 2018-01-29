@@ -9,7 +9,11 @@
 
             /* Android -> Javascript call */
             function set_context(id, name) {
-                document.getElementById(id).value = name;
+                document.getElementById(id).value += name;
+            }
+            function clear_context(id) {
+                var text = document.getElementById(id).value;
+                document.getElementById(id).value = text.slice(0, -1);
             }
         </script>
         <style>
