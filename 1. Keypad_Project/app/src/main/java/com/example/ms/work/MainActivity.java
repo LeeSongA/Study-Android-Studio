@@ -8,11 +8,13 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
 
 // 1차 코드리뷰
 
@@ -32,8 +34,8 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
 
-    WebView webView;
-    WebSettings webSettings;
+    private WebView webView;
+    private WebSettings webSettings;
     private String webEdit;
     private BroadcastReceiver broadcastReceiver;
 
@@ -41,9 +43,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        webView = (WebView)findViewById(R.id.webview);
+        LinearLayout linearLayout = new LinearLayout(this);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        linearLayout.setLayoutParams(layoutParams);
+
+            webView = new WebView(this);
+            LinearLayout.LayoutParams webviewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT);
+            webView.setLayoutParams(webviewParams);
+            linearLayout.addView(webView);
+
+        setContentView(linearLayout);
+
         webView.getSettings().setJavaScriptEnabled(true);
 
         String userAgent = webView.getSettings().getUserAgentString();
