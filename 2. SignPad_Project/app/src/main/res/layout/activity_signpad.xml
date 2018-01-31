@@ -12,7 +12,7 @@
         android:layout_height="60dp"
         android:background="#888888"
         android:gravity="center"
-        android:text="SingPad"
+        android:text="SignPad"
         android:textColor="#fff"
         android:textSize="20sp" />
 

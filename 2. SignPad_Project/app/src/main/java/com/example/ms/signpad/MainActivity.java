@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
 
 // 업무 내용
 // html canvas 클릭 시 안드로이드에서 SignPad 창 띄우기
@@ -22,17 +24,26 @@ import android.webkit.WebViewClient;
 // libs 폴더에 jsoup-1.8.2.jar  pen-v5.0.0_full.aar  sdk-v1.0.0.jar 있음
 
 public class MainActivity extends AppCompatActivity {
-    WebView webView;
-    WebSettings webSettings;
-    String id;
+    private WebView webView;
+    private WebSettings webSettings;
+    private String id;
 
     @SuppressLint("JavascriptInterface")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        webView = (WebView) findViewById(R.id.webview);
+        LinearLayout linearLayout = new LinearLayout(this);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        linearLayout.setLayoutParams(layoutParams);
+
+            webView = new WebView(this);
+            LinearLayout.LayoutParams webviewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT);
+            webView.setLayoutParams(webviewParams);
+            linearLayout.addView(webView);
+
+        setContentView(linearLayout);
+
         webView.getSettings().setJavaScriptEnabled(true);
 
         String userAgent = webView.getSettings().getUserAgentString();

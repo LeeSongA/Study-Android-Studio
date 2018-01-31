@@ -6,14 +6,19 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.TypedValue;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.samsung.android.sdk.SsdkUnsupportedException;
@@ -39,8 +44,42 @@ public class SignPad extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);      // 타이틀바 없애기
-        setContentView(R.layout.activity_signpad);
         context = this;
+
+        LinearLayout linearLayout = new LinearLayout(this);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, ViewGroup.LayoutParams.WRAP_CONTENT);
+        linearLayout.setLayoutParams(layoutParams);
+        String BackgroundColor = "#eeeeee";
+        linearLayout.setBackgroundColor(Color.parseColor((BackgroundColor)));
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+
+            TextView textView = new TextView(this);
+            LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 60);
+            textView.setLayoutParams(textViewParams);
+            textView.setText("SignPad");
+            String BackgroundColor1 = "#888888";
+            textView.setBackgroundColor(Color.parseColor(BackgroundColor1));
+            textView.setGravity(Gravity.CENTER);
+            String TextColor = "#fff";
+            textView.setTextColor(Color.parseColor(TextColor));
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
+            linearLayout.addView(textView);
+
+            LinearLayout linearLayout1 = new LinearLayout(this);
+            LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(300, 100);
+            linearLayout1.setLayoutParams(layoutParams1);
+            linearLayout1.setOrientation(LinearLayout.VERTICAL);
+            linearLayout.addView(linearLayout1);
+
+            View view = new View(this);
+            LinearLayout.LayoutParams viewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1);
+            view.setLayoutParams(viewParams);
+            String BackgroundColor2 = "#888888";
+            view.setBackgroundColor(Color.parseColor(BackgroundColor2));
+            linearLayout.addView(view);
+
+        setContentView(linearLayout);
+
 
         // Initialize Spen
         boolean isSpenFeatureEnabled = false;

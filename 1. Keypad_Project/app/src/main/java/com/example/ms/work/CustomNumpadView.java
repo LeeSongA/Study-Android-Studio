@@ -25,8 +25,8 @@ public class CustomNumpadView extends KeyboardView {
     private Keyboard keyboard = null;
     private List<Keyboard.Key> keyList;
 
-    public CustomNumpadView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+    public CustomNumpadView(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
         keyboard = new Keyboard(context, R.xml.qwerty);
 
         customNumpadView = this;
