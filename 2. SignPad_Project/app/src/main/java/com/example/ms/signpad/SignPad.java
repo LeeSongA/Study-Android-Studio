@@ -11,12 +11,14 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,37 +48,89 @@ public class SignPad extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);      // 타이틀바 없애기
         context = this;
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();               // px dp로 변환하기 위해서
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        double dp = displayMetrics.density;
+
         LinearLayout linearLayout = new LinearLayout(this);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, ViewGroup.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((int)(300*dp), ViewGroup.LayoutParams.WRAP_CONTENT);
         linearLayout.setLayoutParams(layoutParams);
         String BackgroundColor = "#eeeeee";
         linearLayout.setBackgroundColor(Color.parseColor((BackgroundColor)));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
             TextView textView = new TextView(this);
-            LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 60);
+            LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(60*dp));
             textView.setLayoutParams(textViewParams);
             textView.setText("SignPad");
             String BackgroundColor1 = "#888888";
             textView.setBackgroundColor(Color.parseColor(BackgroundColor1));
             textView.setGravity(Gravity.CENTER);
-            String TextColor = "#fff";
+            String TextColor = "#ffffff";
             textView.setTextColor(Color.parseColor(TextColor));
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
             linearLayout.addView(textView);
 
             LinearLayout linearLayout1 = new LinearLayout(this);
-            LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(300, 100);
+            LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams((int)(300*dp), (int)(100*dp));
             linearLayout1.setLayoutParams(layoutParams1);
             linearLayout1.setOrientation(LinearLayout.VERTICAL);
             linearLayout.addView(linearLayout1);
 
             View view = new View(this);
-            LinearLayout.LayoutParams viewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1);
+            LinearLayout.LayoutParams viewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(1*dp));
             view.setLayoutParams(viewParams);
             String BackgroundColor2 = "#888888";
             view.setBackgroundColor(Color.parseColor(BackgroundColor2));
             linearLayout.addView(view);
+
+            LinearLayout linearLayout2 = new LinearLayout(this);
+            LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            linearLayout2.setLayoutParams(layoutParams2);
+
+                Button button_Save = new Button(this);
+                LinearLayout.LayoutParams button_SaveParams = new LinearLayout.LayoutParams((int)(90*dp), ViewGroup.LayoutParams.WRAP_CONTENT);
+                button_Save.setText("OK");
+                button_SaveParams.gravity = Gravity.CENTER;
+                button_SaveParams.weight = 1.0f;
+                button_Save.setLayoutParams(button_SaveParams);
+                button_Save.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        btn_Save_event(view);
+                    }
+                });
+                linearLayout2.addView(button_Save);
+
+                Button button_Clear = new Button(this);
+                LinearLayout.LayoutParams button_ClearParams = new LinearLayout.LayoutParams((int)(90*dp), ViewGroup.LayoutParams.WRAP_CONTENT);
+                button_Clear.setText("Clear");
+                button_ClearParams.gravity = Gravity.CENTER;
+                button_SaveParams.weight = 1.0f;
+                button_Clear.setLayoutParams(button_SaveParams);
+                button_Clear.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        btn_Clear_event(view);
+                    }
+                });
+                linearLayout2.addView(button_Clear);
+
+                Button button_Cancel = new Button(this);
+                LinearLayout.LayoutParams button_CancelParams = new LinearLayout.LayoutParams((int)(90*dp), ViewGroup.LayoutParams.WRAP_CONTENT);
+                button_Cancel.setText("Cancel");
+                button_CancelParams.gravity = Gravity.CENTER;
+                button_SaveParams.weight = 1.0f;
+                button_Cancel.setLayoutParams(button_SaveParams);
+                button_Cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        btn_Cancel_event(view);
+                    }
+                });
+                linearLayout2.addView(button_Cancel);
+
+            linearLayout.addView(linearLayout2);
 
         setContentView(linearLayout);
 
@@ -99,14 +153,13 @@ public class SignPad extends Activity {
         }
 
         // Create Spen View
-        LinearLayout spenViewLayout = (LinearLayout) findViewById(R.id.linearLayout);
         spenSurfaceView = new SpenSurfaceView(context);
         if (spenSurfaceView == null) {
             Toast.makeText(context, "Cannot create new SpenView.",
                     Toast.LENGTH_SHORT).show();
             finish();
         }
-        spenViewLayout.addView(spenSurfaceView);
+        linearLayout1.addView(spenSurfaceView);
 
         // Get the dimension of the device screen.
         Display display = getWindowManager().getDefaultDisplay();
