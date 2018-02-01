@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -22,9 +21,7 @@ public class Keypad extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        DisplayMetrics displayMetrics = new DisplayMetrics();               // px dp로 변환하기 위해서
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        double dp = displayMetrics.density;
+        //Log.d("DEBUG", dp+"");
 
         LinearLayout linearLayout = new LinearLayout(this);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -34,7 +31,8 @@ public class Keypad extends Activity {
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
             TextView textView = new TextView(this);
-            LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(50*dp));
+            // LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(50*dp));
+            LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Util.covertDptoPx(getApplicationContext(), 50));
             textView.setLayoutParams(textViewParams);
             textView.setText("KeyPad");
             String BackgroundColor = "#00000000";
@@ -48,7 +46,7 @@ public class Keypad extends Activity {
             CustomNumpadView customNumpadView = new CustomNumpadView(this,null);
             customNumpadView.setActionListenerActivity(this);
             customNumpadView.setKeypad(this);
-            LinearLayout.LayoutParams customNumpadViewParams = new LinearLayout.LayoutParams((int)(250*dp), (int)(100*dp));
+            LinearLayout.LayoutParams customNumpadViewParams = new LinearLayout.LayoutParams(Util.covertDptoPx(getApplicationContext(), 250), Util.covertDptoPx(getApplicationContext(), 100));
             customNumpadView.setLayoutParams(customNumpadViewParams);
             linearLayout.addView(customNumpadView);
 

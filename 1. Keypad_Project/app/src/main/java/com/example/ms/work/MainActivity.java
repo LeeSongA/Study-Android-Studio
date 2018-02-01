@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        WebView.setWebContentsDebuggingEnabled(true);
         webView.addJavascriptInterface(new AndroidWebBridge(webView), "HybridApp");
         webView.loadUrl("file:///android_asset/index.html");
         webView.setWebViewClient(new WebViewClientClass());
@@ -72,12 +73,30 @@ public class MainActivity extends AppCompatActivity {
         broadcastReceiver = new BroadcastReceiver() {                                // 동적 리시버 구현
             @Override
             public void onReceive(Context context, Intent intent) {
+
                 if(intent != null) {
                     int result = intent.getIntExtra("result", -1);
-                    if(result == 60)
-                        webView.loadUrl("javascript:clear_context('"+ webEdit +"');");
-                    else
-                        webView.loadUrl("javascript:set_context('"+ webEdit +"', '"+ intent.getIntExtra("result", -1) +"');");
+
+                    StringBuilder stringBuilder = new StringBuilder();              // 수정
+                    // stringBuilder.append("javascript:clear_context('");
+
+                    stringBuilder.append("javascript:");
+                    stringBuilder.append(result == 60 ? "clear" : "set");
+                    stringBuilder.append("_context('");
+
+                    stringBuilder.append(webEdit);
+                    if(result != 60) {
+                        stringBuilder.append("', '");
+                        stringBuilder.append(result);
+                    }
+                    stringBuilder.append("');");
+
+                    webView.loadUrl(stringBuilder.toString());
+
+//                     if(result == 60)
+//                        webView.loadUrl("javascript:clear_context('"+ webEdit +"');");
+//                     else
+//                        webView.loadUrl("javascript:set_context('"+ webEdit +"', '"+ intent.getIntExtra("result", -1) +"');");
                 }
             }
         };
