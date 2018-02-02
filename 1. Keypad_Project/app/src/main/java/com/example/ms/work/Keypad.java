@@ -10,8 +10,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -30,25 +32,39 @@ public class Keypad extends Activity {
         linearLayout.setBackgroundColor(Color.parseColor((BackColor)));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-            TextView textView = new TextView(this);
-            // LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(50*dp));
-            LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Util.covertDptoPx(getApplicationContext(), 50));
-            textView.setLayoutParams(textViewParams);
-            textView.setText("KeyPad");
-            String BackgroundColor = "#00000000";
-            textView.setBackgroundColor(Color.parseColor(BackgroundColor));
-            textView.setGravity(Gravity.CENTER);
-            String TextColor = "#888888";
-            textView.setTextColor(Color.parseColor(TextColor));
-            textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
-            linearLayout.addView(textView);
+        TextView textView = new TextView(this);
+        // LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(50*dp));
+        LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Util.covertDptoPx(getApplicationContext(), 50));
+        textView.setLayoutParams(textViewParams);
+        textView.setText("KeyPad");
+        String BackgroundColor = "#00000000";
+        textView.setBackgroundColor(Color.parseColor(BackgroundColor));
+        textView.setGravity(Gravity.CENTER);
+        String TextColor = "#888888";
+        textView.setTextColor(Color.parseColor(TextColor));
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
+        linearLayout.addView(textView);
 
-            CustomNumpadView customNumpadView = new CustomNumpadView(this,null);
-            customNumpadView.setActionListenerActivity(this);
-            customNumpadView.setKeypad(this);
-            LinearLayout.LayoutParams customNumpadViewParams = new LinearLayout.LayoutParams(Util.covertDptoPx(getApplicationContext(), 250), Util.covertDptoPx(getApplicationContext(), 100));
-            customNumpadView.setLayoutParams(customNumpadViewParams);
-            linearLayout.addView(customNumpadView);
+        CustomNumpadView customNumpadView = new CustomNumpadView(this,null);
+        customNumpadView.setActionListenerActivity(this);
+        customNumpadView.setKeypad(this);
+        LinearLayout.LayoutParams customNumpadViewParams = new LinearLayout.LayoutParams(Util.covertDptoPx(getApplicationContext(), 250), Util.covertDptoPx(getApplicationContext(), 100));
+        customNumpadView.setLayoutParams(customNumpadViewParams);
+        linearLayout.addView(customNumpadView);
+
+        Button button_Clear = new Button(this);
+        LinearLayout.LayoutParams button_SaveParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        button_Clear.setText("Clear");
+        // button_Clear.setLayoutParams(button_SaveParams);
+        button_Clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.putExtra("result", 0);
+                finish();
+            }
+        });
+        linearLayout.addView(button_Clear, button_SaveParams);
 
         setContentView(linearLayout);
     }
