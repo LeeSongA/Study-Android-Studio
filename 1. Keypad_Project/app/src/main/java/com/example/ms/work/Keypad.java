@@ -23,8 +23,6 @@ public class Keypad extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        //Log.d("DEBUG", dp+"");
-
         LinearLayout linearLayout = new LinearLayout(this);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         linearLayout.setLayoutParams(layoutParams);
@@ -53,15 +51,23 @@ public class Keypad extends Activity {
         linearLayout.addView(customNumpadView);
 
         Button button_Clear = new Button(this);
-        LinearLayout.LayoutParams button_SaveParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams button_SaveParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Util.covertDptoPx(getApplicationContext(), 50));
         button_Clear.setText("Clear");
+        String BackgroundColor1 = "#00000000";
+        textView.setBackgroundColor(Color.parseColor(BackgroundColor1));
+        textView.setGravity(Gravity.CENTER);
+        textView.setPadding(Util.covertDptoPx(getApplicationContext(), 16), Util.covertDptoPx(getApplicationContext(), 16), Util.covertDptoPx(getApplicationContext(), 16), Util.covertDptoPx(getApplicationContext(), 16));
+        String TextColor1 = "#888888";
+        textView.setTextColor(Color.parseColor(TextColor1));
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15);
+
         // button_Clear.setLayoutParams(button_SaveParams);
         button_Clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.putExtra("result", 0);
-                finish();
+                Intent intent = new Intent("test.com.action.TEST");
+                intent.putExtra("result", 100);
+                sendBroadcast(intent);
             }
         });
         linearLayout.addView(button_Clear, button_SaveParams);

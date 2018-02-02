@@ -31,7 +31,6 @@ import android.widget.LinearLayout;
 
 // handler 불필요
 
-
 public class MainActivity extends AppCompatActivity {
 
     private WebView webView;
@@ -77,29 +76,29 @@ public class MainActivity extends AppCompatActivity {
                 if(intent != null) {
                     int result = intent.getIntExtra("result", -1);
 
-//                    StringBuilder stringBuilder = new StringBuilder();
-//                    // stringBuilder.append("javascript:clear_context('");
-
-//                    stringBuilder.append("javascript:");
-//                    stringBuilder.append(result == 60 ? "delete" : "set");
-//                    stringBuilder.append("_context('");
-
-//                    stringBuilder.append(webEdit);
-//                    if(result != 60) {
-//                        stringBuilder.append("', '");
-//                        stringBuilder.append(result);
-//                    }
-//                    stringBuilder.append("');");
-
-//                    webView.loadUrl(stringBuilder.toString());
-
-
-                    if(result == 60)
-                        webView.loadUrl("javascript:delete_context('"+ webEdit +"');");
-                    else if(result == 0)
-                        webView.loadUrl("javascript:clear_context('"+ webEdit +"');");
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.append("javascript:");
+                    if(result == 60 || result == 100)
+                        stringBuilder.append(result == 60 ? "delete" : "clear");
                     else
-                        webView.loadUrl("javascript:set_context('"+ webEdit +"', '"+ intent.getIntExtra("result", -1) +"');");
+                        stringBuilder.append("set");
+                    stringBuilder.append("_context('");
+                    stringBuilder.append(webEdit);
+                    if(result != 60) {
+                        stringBuilder.append("', '");
+                        stringBuilder.append(result);
+                    }
+                    stringBuilder.append("');");
+
+                    webView.loadUrl(stringBuilder.toString());
+
+//                    if(result == 60)
+//                        webView.loadUrl("javascript:   delete   _context('"+ webEdit +"');");
+//                    else if(result == 100)
+//                        webView.loadUrl("javascript:   clear    _context('"+ webEdit +"');");
+//                    else
+//                        webView.loadUrl("javascript:   set      _context('"+ webEdit +"', '"+ intent.getIntExtra("result", -1) +"');");
+
                 }
             }
         };
