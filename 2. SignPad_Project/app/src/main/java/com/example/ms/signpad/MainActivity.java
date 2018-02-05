@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 // SignPad: Spen SDK 이용해서 필압 효과
 // libs 폴더에 jsoup-1.8.2.jar  pen-v5.0.0_full.aar  sdk-v1.0.0.jar 있음
 
+
 public class MainActivity extends AppCompatActivity {
     private WebView webView;
     private WebSettings webSettings;
