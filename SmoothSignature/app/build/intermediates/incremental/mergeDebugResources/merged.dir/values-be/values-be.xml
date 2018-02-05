@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Перайсці на галоўную старонку"</string>
+    <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s, %2$s"</string>
+    <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s, %2$s, %3$s"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Перайсці ўверх"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Дадатковыя параметры"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Гатова"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Прагледзець усё"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Выбраць праграму"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"ВЫКЛ."</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"УКЛ."</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Пошук..."</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Выдалiць запыт"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Запыт на пошук"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Пошук"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Адправіць запыт"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Галасавы пошук"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Абагуліць з"</string>
+    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Абагуліць з %s"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Згарнуць"</string>
+    <string name="pen_string_add">Дадаць</string>
+    <string name="pen_string_add_preset">Дадаць перадвызначаную наладу</string>
+    <string name="pen_string_air_brush">Рэтуш</string>
+    <string name="pen_string_align">Выраўнаваць</string>
+    <string name="pen_string_align_center">Выраўнаваць тэкст па цэнтры</string>
+    <string name="pen_string_align_justify">Выраўнаваць па баках</string>
+    <string name="pen_string_align_left">Выраўнаваць тэкст па левым баку</string>
+    <string name="pen_string_align_right">Выраўнаваць тэкст па правым баку</string>
+    <string name="pen_string_alignment">Выраўноўванне</string>
+    <string name="pen_string_already_exists">Ужо існуе.</string>
+    <string name="pen_string_amemo_more">Больш</string>
+    <string name="pen_string_auto_moving">Адрэгуляваць памер вобласці аўтаматычнага перамяшчэння</string>
+    <string name="pen_string_back">Назад</string>
+    <string name="pen_string_bold">Тоўсты</string>
+    <string name="pen_string_brush">Мастацкі пэндзаль</string>
+    <string name="pen_string_bullet">Маркіраваныя пункты</string>
+    <string name="pen_string_button">Кнопка</string>
+    <string name="pen_string_calligraphy_pen">Каліграфічная ручка</string>
+    <string name="pen_string_cancel">Скасав.</string>
+    <string name="pen_string_chinese_brush">Пэндзаль для каліграфіі</string>
+    <string name="pen_string_clear_all">Сцерці ўсё</string>
+    <string name="pen_string_close">Закрыць</string>
+    <string name="pen_string_color">Колер</string>
+    <string name="pen_string_color_amber">Бурштынавы</string>
+    <string name="pen_string_color_black">Чорны</string>
+    <string name="pen_string_color_blue">Блакітны</string>
+    <string name="pen_string_color_blue_violet">Сіне-фіялетавы</string>
+    <string name="pen_string_color_brown">Карычневы</string>
+    <string name="pen_string_color_burgundy">Бардовы</string>
+    <string name="pen_string_color_burnt_umber">Паленая умбра</string>
+    <string name="pen_string_color_chartreuse">Фісташкавы</string>
+    <string name="pen_string_color_coral">Каралавы</string>
+    <string name="pen_string_color_crimson">Малінавы</string>
+    <string name="pen_string_color_current">Бягучы</string>
+    <string name="pen_string_color_cyan">Блакітны</string>
+    <string name="pen_string_color_dark_blue">Цёмна-сіні</string>
+    <string name="pen_string_color_dark_cyan">Цёмна-блакітны</string>
+    <string name="pen_string_color_dark_grey">Цёмна-шэры</string>
+    <string name="pen_string_color_dark_salmon">Цёмна-ласасёвы</string>
+    <string name="pen_string_color_deep_orange">Цёмны аранжавы</string>
+    <string name="pen_string_color_dim_grey">Матава-шэры</string>
+    <string name="pen_string_color_double_tap_to_apply">Націсніце двойчы, каб ужыць.</string>
+    <string name="pen_string_color_forest_green">Травяніста-зялёны</string>
+    <string name="pen_string_color_gold">Золата</string>
+    <string name="pen_string_color_green">Зялёны</string>
+    <string name="pen_string_color_grey">Шэры</string>
+    <string name="pen_string_color_hot_pink">Ярка-ружовы</string>
+    <string name="pen_string_color_indigo">Індыга</string>
+    <string name="pen_string_color_light_blue">Светла-сіні</string>
+    <string name="pen_string_color_light_green">Светла-зялёны</string>
+    <string name="pen_string_color_light_pink">Светла-ружовы</string>
+    <string name="pen_string_color_light_salmon">Светла-ласасёвы</string>
+    <string name="pen_string_color_lilac">Бэзавы</string>
+    <string name="pen_string_color_lime">Зеленавата-жоўты</string>
+    <string name="pen_string_color_lime_green">Зеленавата-жоўты</string>
+    <string name="pen_string_color_magenta">Пурпурны</string>
+    <string name="pen_string_color_maroon">Цёмна-бардовы</string>
+    <string name="pen_string_color_medium_orchid">Ліловы</string>
+    <string name="pen_string_color_new">Новы</string>
+    <string name="pen_string_color_olive_drab">Аліўкава-шэры</string>
+    <string name="pen_string_color_orange">Аранжавы</string>
+    <string name="pen_string_color_palette">Адмысловая колеравая палітра</string>
+    <string name="pen_string_color_peach_puff">Персікавы</string>
+    <string name="pen_string_color_peacock_blue">Бэзава-сіні</string>
+    <string name="pen_string_color_permanent_violet">Суцэльны фіялетавы</string>
+    <string name="pen_string_color_picker">Выбар колеру</string>
+    <string name="pen_string_color_picker_tts">Выбар колеру</string>
+    <string name="pen_string_color_pink">Ружовы</string>
+    <string name="pen_string_color_pitch_black">Смаляна-чорны</string>
+    <string name="pen_string_color_plum">Цёмны сіне-фіялетавы</string>
+    <string name="pen_string_color_purple">Фіялетавы</string>
+    <string name="pen_string_color_red">Чырвоны</string>
+    <string name="pen_string_color_royal_blue">Ярка-сіні</string>
+    <string name="pen_string_color_saddle_brown">Колер скуранога сядла</string>
+    <string name="pen_string_color_sap_green">Зялёная крушына</string>
+    <string name="pen_string_color_sea_green">Колер марской хвалі</string>
+    <string name="pen_string_color_set">Задаць</string>
+    <string name="pen_string_color_sky_blue">Нябесна-блакітны</string>
+    <string name="pen_string_color_steel_blue">Сталёва-сіні</string>
+    <string name="pen_string_color_tap_to_apply">Націсніце, каб ужыць.</string>
+    <string name="pen_string_color_teal">Сіне-зялёны</string>
+    <string name="pen_string_color_tomato">Памідор</string>
+    <string name="pen_string_color_vandyke_brown">Карычневы Вандейк</string>
+    <string name="pen_string_color_viridian">Вірыдыян</string>
+    <string name="pen_string_color_vivid_blue">Выразны сіні</string>
+    <string name="pen_string_color_white">Белы</string>
+    <string name="pen_string_color_yellow">Жоўты</string>
+    <string name="pen_string_color_yellow_ochre">Жоўтая охра</string>
+    <string name="pen_string_copied_to_clipboard">Скапіравана ў буфер абмену.</string>
+    <string name="pen_string_correction_pen">Correction pen</string>
+    <string name="pen_string_crayon">Аловак</string>
+    <string name="pen_string_cursive">Cursive</string>
+    <string name="pen_string_decrease">Паменшыць</string>
+    <string name="pen_string_delete_preset">Выдаліць</string>
+    <string name="pen_string_done">Гатова</string>
+    <string name="pen_string_drag_to_resize">Tap and drag to resize</string>
+    <string name="pen_string_dropdown_list">Выпадны спіс</string>
+    <string name="pen_string_dummy">Dummy</string>
+    <string name="pen_string_enter">Enter</string>
+    <string name="pen_string_erase_line_by_line">Erase line by line</string>
+    <string name="pen_string_erase_touched_area">Сцерці вобласць дакр.</string>
+    <string name="pen_string_eraser_settings">Налады сціркі</string>
+    <string name="pen_string_failed_to_recognise_shape">Не ўдалося распазнаць фігуру.</string>
+    <string name="pen_string_font_color">Колер шрыфту</string>
+    <string name="pen_string_font_size">Памер шрыфту</string>
+    <string name="pen_string_font_type">Тып шрыфту</string>
+    <string name="pen_string_fountain_pen">Аўтаручка</string>
+    <string name="pen_string_gradation">PICK A COLOR</string>
+    <string name="pen_string_handler_show_brush">Паказаць пэндзаль</string>
+    <string name="pen_string_handler_show_brush_double_tap">Націсніце двойчы, каб паказаць пэндзаль.</string>
+    <string name="pen_string_handler_show_color">Паказаць колер</string>
+    <string name="pen_string_handler_show_color_double_tap">Націсніце двойчы, каб паказаць колер.</string>
+    <string name="pen_string_handler_toggle_switch">Пераключальнік</string>
+    <string name="pen_string_highlighter_pen">Ручка-маркер</string>
+    <string name="pen_string_increase">Павялічыць</string>
+    <string name="pen_string_indent">Павялічыць водступ</string>
+    <string name="pen_string_italic">Курсіў</string>
+    <string name="pen_string_large">Вялікі</string>
+    <string name="pen_string_lasso">Ласо</string>
+    <string name="pen_string_line_spacing">Міжрадковы інтэрвал</string>
+    <string name="pen_string_marker_pen">Маркер</string>
+    <string name="pen_string_minus">Мінус</string>
+    <string name="pen_string_modulation">Modulation</string>
+    <string name="pen_string_move_down">Перамясціць уніз</string>
+    <string name="pen_string_move_handler">Handle</string>
+    <string name="pen_string_move_left">Перамясціць улева</string>
+    <string name="pen_string_move_right">Перамясціць управа</string>
+    <string name="pen_string_move_up">Перамясціць уверх</string>
+    <string name="pen_string_next">Далей</string>
+    <string name="pen_string_no_pen_history">No pen history</string>
+    <string name="pen_string_no_preset">Няма перадвызначаных пёраў</string>
+    <string name="pen_string_not_selected">Не выбрана</string>
+    <string name="pen_string_oil_brush">Алейны пэндзаль</string>
+    <string name="pen_string_opacity">Непразрыстасць</string>
+    <string name="pen_string_opaque">Opaque</string>
+    <string name="pen_string_palette">Палітра</string>
+    <string name="pen_string_paragraph">Абзац</string>
+    <string name="pen_string_pasted_to_clipboard">Устаўлена з буфера абмену.</string>
+    <string name="pen_string_pen">Пяро</string>
+    <string name="pen_string_pen_preset">Перадвызн. %d</string>
+    <string name="pen_string_pen_settings">Налады пяра</string>
+    <string name="pen_string_pencil">Аловак</string>
+    <string name="pen_string_plus">Плюс</string>
+    <string name="pen_string_popup">Усплывальнае паведамленне</string>
+    <string name="pen_string_preset">Presets</string>
+    <string name="pen_string_preview">Папярэдні прагляд</string>
+    <string name="pen_string_previous">Назад</string>
+    <string name="pen_string_radius">Радыус</string>
+    <string name="pen_string_reached_maximum_input">Дасягнута максімальная колькасць знакаў (%d).</string>
+    <string name="pen_string_reached_maximum_preset">Дасягнуты максімум перадвызначаных пёраў (%d).</string>
+    <string name="pen_string_recent_color">Нядаўна выкарыстаныя колеры</string>
+    <string name="pen_string_rectangle">Прамавуг-к</string>
+    <string name="pen_string_reset">Скінуць</string>
+    <string name="pen_string_resize">Tap and drag to resize</string>
+    <string name="pen_string_seek_control">Элемент выбару</string>
+    <string name="pen_string_select_color">Select a colour.</string>
+    <string name="pen_string_selected">Выбрана</string>
+    <string name="pen_string_selection_mode">Рэжым вылучэння</string>
+    <string name="pen_string_setting">Налады</string>
+    <string name="pen_string_size">Памер</string>
+    <string name="pen_string_small">Малы</string>
+    <string name="pen_string_special">Special</string>
+    <string name="pen_string_sustenance">Sustenance</string>
+    <string name="pen_string_switch_to_front_camera">Пераключыцца на пярэднюю камеру</string>
+    <string name="pen_string_switch_to_rear_camera">Пераключыцца на заднюю камеру</string>
+    <string name="pen_string_tab_selected_tts">Укладка %1$d з %2$d</string>
+    <string name="pen_string_text_settings">Налады тэксту</string>
+    <string name="pen_string_thick">Тоўстая</string>
+    <string name="pen_string_thickness">Таўшчыня</string>
+    <string name="pen_string_thin">Тонкая</string>
+    <string name="pen_string_transform_back_to_original_shape">Вярнуць зыходную форму фігуры</string>
+    <string name="pen_string_transform_into_auto_shape">Трансфармаваць у аўтафігуру</string>
+    <string name="pen_string_transparency">Transparency</string>
+    <string name="pen_string_transparent">Празрыстая</string>
+    <string name="pen_string_unable_to_erase_heavy_lines">Выберыце «Сцерці парадкова», каб сцерці рысы, якія накладаюцца, і тоўстыя рысы.</string>
+    <string name="pen_string_underline">Падкрэслены</string>
+    <string name="pen_string_water_color_brush">Акварэльны пэндзаль</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Пошук"</string>
+    <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"больш за 999"</string>
+</resources>

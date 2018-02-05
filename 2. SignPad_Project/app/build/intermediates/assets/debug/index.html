@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function Event(id) {
+            window.SignPad.callAndroid(id);
+        }
+        function Save(id, data) {
+            var canvas = document.getElementById(id);
+            var context = canvas.getContext("2d");
+
+            var image = new Image();
+            image.src = "data:image/jpg;base64,"+data;
+
+            image.onload = function() {
+                context.drawImage(image, 0, 0, canvas.width, canvas.height);
+            };
+        }
+        function Clear(id) {
+            var canvas = document.getElementById(id);
+            var context = canvas.getContext("2d");
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+    <style>
+        .canvas {border: 1px solid black};
+    </style>
+</head>
+<body>
+    <canvas class="canvas" id="canvas1" width="400" height="200" onclick="Event(this.id)"></canvas>
+    </br>
+    <canvas class="canvas" id="canvas2" width="400" height="200" onclick="Event(this.id)"></canvas>
+    </br>
+    <canvas class="canvas" id="canvas3" width="400" height="200" onclick="Event(this.id)"></canvas>
+</body>
+</html>

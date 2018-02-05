@@ -1,0 +1,39 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\GitHub\\Study-Android-Studio\\SmoothSignature\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v14\\values-v14.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\dream\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\03fbca038206ff725ccea7c95c12b714\\res\\values-v14\\values-v14.xml",
+                    "from": {
+                        "startLines": "2,7,8,9,15",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,331,402,485,895",
+                        "endLines": "6,7,8,14,20",
+                        "endColumns": "12,70,82,12,12",
+                        "endOffsets": "326,397,480,890,1312"
+                    },
+                    "to": {
+                        "startLines": "7,12,13,14,20",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "208,484,555,638,1048",
+                        "endLines": "11,12,13,19,25",
+                        "endColumns": "12,70,82,12,12",
+                        "endOffsets": "479,550,633,1043,1465"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\dream\\.gradle\\caches\\transforms-1\\files-1.1\\pen-v5.0.0_full.aar\\2af1960cd25a21a038d36da2df338ac4\\res\\values-v14\\values-v14.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "203"
+                    }
+                }
+            ]
+        }
+    ]
+}

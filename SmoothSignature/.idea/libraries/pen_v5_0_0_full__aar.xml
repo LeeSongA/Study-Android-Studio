@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="pen-v5.0.0_full:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/libs/com.c2ddrawbitmap.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/libs/se.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/libs/wrapper.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/libs/interface.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/libs/sprengine.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/libs/vip_sdk_recognition.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/libs/recognitionengine.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/libs/hwrsdk.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/libs/sdl.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pen-v5.0.0_full.aar/2af1960cd25a21a038d36da2df338ac4/jars/libs/spenshape.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\GitHub\\Study-Android-Studio\\SmoothSignature\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw280dp-land-xxxhdpi-v13\\values-sw280dp-land-xxxhdpi-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\dream\\.gradle\\caches\\transforms-1\\files-1.1\\pen-v5.0.0_full.aar\\2af1960cd25a21a038d36da2df338ac4\\res\\values-sw280dp-land-xxxhdpi-v13\\values-sw280dp-land-xxxhdpi-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "81",
+                        "endOffsets": "132"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="drawing_brush_color_setting_circle_focus_size">37dp</dimen>
+    <dimen name="drawing_brush_color_setting_circle_size">30dp</dimen>
+    <dimen name="drawing_brush_color_setting_color_colomn_1_margin_start">3.5dp</dimen>
+    <dimen name="drawing_brush_color_setting_color_colomn_2_margin_start">44.5dp</dimen>
+    <dimen name="drawing_brush_color_setting_color_colomn_3_margin_start">85.5dp</dimen>
+    <dimen name="drawing_brush_color_setting_color_colomn_4_margin_start">126.5dp</dimen>
+    <dimen name="drawing_brush_color_setting_color_picker_button_width">28dp</dimen>
+    <dimen name="drawing_brush_color_setting_color_picker_width">46dp</dimen>
+    <dimen name="drawing_brush_color_setting_palette_margin_start">0dp</dimen>
+    <dimen name="drawing_brush_color_setting_palette_width">160dp</dimen>
+    <dimen name="drawing_brush_color_setting_selector_width">160dp</dimen>
+    <dimen name="drawing_brush_color_setting_width">206.5dp</dimen>
+    <dimen name="drawing_brush_preview_layout_height">68dp</dimen>
+    <dimen name="drawing_brush_setting_width">273dp</dimen>
+    <dimen name="drawing_brush_type_button_margin_left">6dp</dimen>
+    <dimen name="drawing_brush_type_view_margin_start_close">3.5dp</dimen>
+    <dimen name="drawing_brush_type_view_open_width">250dp</dimen>
+    <dimen name="drawing_brush_type_view_width">63dp</dimen>
+    <dimen name="palette_pen_type_button_margin_left">6dp</dimen>
+    <dimen name="palette_pen_type_view_arrow_width">28dp</dimen>
+    <dimen name="palette_pen_type_view_open_width">250dp</dimen>
+    <dimen name="palette_total_layout_width">273dp</dimen>
+</resources>

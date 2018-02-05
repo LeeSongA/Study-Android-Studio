@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="handwriting_color_setting_focus_circle_padding_small">2dp</dimen>
+</resources>

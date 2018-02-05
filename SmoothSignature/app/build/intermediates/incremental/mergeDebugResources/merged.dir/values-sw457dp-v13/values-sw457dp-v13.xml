@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_total_layout_width">290dp</dimen>
+    <dimen name="setting_pen_title_close_button_text_size">14sp</dimen>
+    <dimen name="setting_pen_title_text_size">16sp</dimen>
+    <dimen name="setting_pen_total_layout_height">371dp</dimen>
+    <integer name="common_device_type">1</integer>
+    <integer name="common_total_layout_width">290</integer>
+</resources>

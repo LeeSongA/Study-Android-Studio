@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="color_picker_popup_color_focus_wheel_thickness">2dp</dimen>
+    <dimen name="color_picker_popup_content_point_size_v41_2">27dp</dimen>
+    <dimen name="color_picker_popup_point_size_v41">35dp</dimen>
+    <dimen name="color_picker_popup_recent_color_text_width">336dp</dimen>
+    <dimen name="floating_controller_voice_button_height">29dp</dimen>
+    <dimen name="floating_controller_voice_button_width">29dp</dimen>
+    <dimen name="floating_controller_voice_cancel_button_margin_end">16dp</dimen>
+    <dimen name="floating_controller_voice_cancel_button_margin_start">10dp</dimen>
+    <dimen name="floating_controller_voice_draggable_view_height">29dp</dimen>
+    <dimen name="floating_controller_voice_draggable_view_margin_start">11dp</dimen>
+    <dimen name="floating_controller_voice_draggable_view_width">20dp</dimen>
+    <dimen name="floating_controller_voice_first_button_margin_start">10dp</dimen>
+    <dimen name="floating_controller_voice_layout_height">43dp</dimen>
+    <dimen name="floating_controller_voice_second_button_margin_start">10dp</dimen>
+    <integer name="color_picker_popup_point_circle_size">35</integer>
+</resources>

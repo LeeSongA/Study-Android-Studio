@@ -1,0 +1,179 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:2:1-25:12
+MERGED from [:pen-v5.0.0_full:] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\pen-v5.0.0_full.aar\be079be1e8d328504d6e19d121a46da0\AndroidManifest.xml:2:1-19:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\03fbca038206ff725ccea7c95c12b714\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\fedc13a5da30e711f7f37bac4a64e4d5\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\2e30104ef9bf62cd9da32a9ee5e1d406\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8cb856abc470780f9bec96295c9181c0\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5e53550d68b6767c7fad88feb6fc550a\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\54b455b9bad7f93126f0cdc4c48f638c\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\bce20670b6093a5cab37ad5a74294347\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\27a785c8c51d0714cd7edfdd74f86fbd\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2fd35db3b08570322367048ca3b72b4c\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\7a0186834108a7dc1a19d55fa26a53dc\AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\d6688954805b2c6f61bc4e5caf220823\AndroidManifest.xml:17:1-30:12
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:2:1-25:12
+	package
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+		INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:5:5-81
+	android:name
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:5:22-78
+uses-permission#com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY
+ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:6:5-116
+	android:name
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:6:22-114
+application
+ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:8:5-23:19
+MERGED from [:pen-v5.0.0_full:] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\pen-v5.0.0_full.aar\be079be1e8d328504d6e19d121a46da0\AndroidManifest.xml:13:5-17:19
+MERGED from [:pen-v5.0.0_full:] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\pen-v5.0.0_full.aar\be079be1e8d328504d6e19d121a46da0\AndroidManifest.xml:13:5-17:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\03fbca038206ff725ccea7c95c12b714\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\03fbca038206ff725ccea7c95c12b714\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\fedc13a5da30e711f7f37bac4a64e4d5\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\fedc13a5da30e711f7f37bac4a64e4d5\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\2e30104ef9bf62cd9da32a9ee5e1d406\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\2e30104ef9bf62cd9da32a9ee5e1d406\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8cb856abc470780f9bec96295c9181c0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8cb856abc470780f9bec96295c9181c0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5e53550d68b6767c7fad88feb6fc550a\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5e53550d68b6767c7fad88feb6fc550a\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\54b455b9bad7f93126f0cdc4c48f638c\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\54b455b9bad7f93126f0cdc4c48f638c\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\bce20670b6093a5cab37ad5a74294347\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\bce20670b6093a5cab37ad5a74294347\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\27a785c8c51d0714cd7edfdd74f86fbd\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\27a785c8c51d0714cd7edfdd74f86fbd\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2fd35db3b08570322367048ca3b72b4c\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2fd35db3b08570322367048ca3b72b4c\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\7a0186834108a7dc1a19d55fa26a53dc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\7a0186834108a7dc1a19d55fa26a53dc\AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\d6688954805b2c6f61bc4e5caf220823\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\d6688954805b2c6f61bc4e5caf220823\AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:11:9-41
+	android:roundIcon
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:12:9-54
+	android:icon
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:10:9-43
+	android:allowBackup
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:9:9-35
+	android:theme
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:14:9-40
+activity#com.example.ms.signpad.MainActivity
+ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:15:9-21:20
+	android:name
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:15:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:19:27-74
+activity#com.example.ms.signpad.SignPad
+ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:22:9-98
+	android:theme
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:22:43-86
+	android:name
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml:22:19-42
+uses-sdk
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+MERGED from [:pen-v5.0.0_full:] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\pen-v5.0.0_full.aar\be079be1e8d328504d6e19d121a46da0\AndroidManifest.xml:7:5-9:41
+MERGED from [:pen-v5.0.0_full:] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\pen-v5.0.0_full.aar\be079be1e8d328504d6e19d121a46da0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\03fbca038206ff725ccea7c95c12b714\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\03fbca038206ff725ccea7c95c12b714\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\fedc13a5da30e711f7f37bac4a64e4d5\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\fedc13a5da30e711f7f37bac4a64e4d5\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\2e30104ef9bf62cd9da32a9ee5e1d406\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\2e30104ef9bf62cd9da32a9ee5e1d406\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8cb856abc470780f9bec96295c9181c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8cb856abc470780f9bec96295c9181c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5e53550d68b6767c7fad88feb6fc550a\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5e53550d68b6767c7fad88feb6fc550a\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\54b455b9bad7f93126f0cdc4c48f638c\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\54b455b9bad7f93126f0cdc4c48f638c\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\bce20670b6093a5cab37ad5a74294347\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\bce20670b6093a5cab37ad5a74294347\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\27a785c8c51d0714cd7edfdd74f86fbd\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\27a785c8c51d0714cd7edfdd74f86fbd\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2fd35db3b08570322367048ca3b72b4c\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2fd35db3b08570322367048ca3b72b4c\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\7a0186834108a7dc1a19d55fa26a53dc\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\7a0186834108a7dc1a19d55fa26a53dc\AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\d6688954805b2c6f61bc4e5caf220823\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\d6688954805b2c6f61bc4e5caf220823\AndroidManifest.xml:20:5-22:41
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\03fbca038206ff725ccea7c95c12b714\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+		INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+		ADDED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+		INJECTED from D:\GitHub\Study-Android-Studio\2. SignPad_Project\app\src\main\AndroidManifest.xml
+uses-permission#com.samsung.android.sdk.handwriting.permission.RESOURCE_LANGUAGE_UPDATE
+ADDED from [:pen-v5.0.0_full:] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\pen-v5.0.0_full.aar\be079be1e8d328504d6e19d121a46da0\AndroidManifest.xml:11:5-111
+	android:name
+		ADDED from [:pen-v5.0.0_full:] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\pen-v5.0.0_full.aar\be079be1e8d328504d6e19d121a46da0\AndroidManifest.xml:11:22-108
+uses-library#handwriting
+ADDED from [:pen-v5.0.0_full:] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\pen-v5.0.0_full.aar\be079be1e8d328504d6e19d121a46da0\AndroidManifest.xml:14:9-16:40
+	android:required
+		ADDED from [:pen-v5.0.0_full:] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\pen-v5.0.0_full.aar\be079be1e8d328504d6e19d121a46da0\AndroidManifest.xml:16:13-37
+	android:name
+		ADDED from [:pen-v5.0.0_full:] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\pen-v5.0.0_full.aar\be079be1e8d328504d6e19d121a46da0\AndroidManifest.xml:15:13-39
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\03fbca038206ff725ccea7c95c12b714\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\2e30104ef9bf62cd9da32a9ee5e1d406\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\2e30104ef9bf62cd9da32a9ee5e1d406\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8cb856abc470780f9bec96295c9181c0\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\8cb856abc470780f9bec96295c9181c0\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5e53550d68b6767c7fad88feb6fc550a\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5e53550d68b6767c7fad88feb6fc550a\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\54b455b9bad7f93126f0cdc4c48f638c\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\54b455b9bad7f93126f0cdc4c48f638c\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\bce20670b6093a5cab37ad5a74294347\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\bce20670b6093a5cab37ad5a74294347\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\27a785c8c51d0714cd7edfdd74f86fbd\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\27a785c8c51d0714cd7edfdd74f86fbd\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2fd35db3b08570322367048ca3b72b4c\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2fd35db3b08570322367048ca3b72b4c\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\7a0186834108a7dc1a19d55fa26a53dc\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\7a0186834108a7dc1a19d55fa26a53dc\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\03fbca038206ff725ccea7c95c12b714\AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\03fbca038206ff725ccea7c95c12b714\AndroidManifest.xml:27:13-51
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\d6688954805b2c6f61bc4e5caf220823\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\d6688954805b2c6f61bc4e5caf220823\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\dream\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\d6688954805b2c6f61bc4e5caf220823\AndroidManifest.xml:26:13-58

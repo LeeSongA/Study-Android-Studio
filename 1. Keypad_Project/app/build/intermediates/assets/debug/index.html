@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script language="javascript">
+            /* Javascript -> Android call */
+            function Event(id) {
+                window.HybridApp.setMessage(id);
+            }
+
+            /* Android -> Javascript call */
+            function set_context(id, number) {
+                document.getElementById(id).value += number;
+            }
+            function delete_context(id) {				// 하나씩 지워지는 거
+                var text = document.getElementById(id).value;
+                document.getElementById(id).value = text.slice(0, -1);
+            }
+            function clear_context(id) {				// 다 지워지는 거
+                var text = document.getElementById(id).value;
+                document.getElementById(id).value = "";
+            }
+        </script>
+    <style>
+             .text {
+                display: inline-block;
+                width: 200px;
+                height: 20px;
+                border: 2px solid #000000;
+                margin: 0.5em;
+                font-size: 14px;
+            }
+        </style>
+</head>
+<body>
+<input class="text" type="text" name="text" value="" id="context1" onclick="Event(this.id)"/>
+<input class="text" type="password" name="text" value="" id="context2" onclick="Event(this.id)" />
+<input class="text" type="password" name="text" value="" id="context3" onclick="Event(this.id)" />
+<input class="text" type="password" name="text" value="" id="context4" onclick="Event(this.id)" />
+</body>
+</html>

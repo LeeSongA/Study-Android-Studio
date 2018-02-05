@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="brush_pen_preview_padding">21dp</dimen>
+    <dimen name="drawing_brush_preview_layout_height">164dp</dimen>
+    <dimen name="drawing_brush_preview_layout_height_eraser">97dp</dimen>
+    <dimen name="drawing_brush_preview_layout_margin_bottom">12dp</dimen>
+</resources>

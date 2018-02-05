@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="color_picker_popup_content_point_size_v41_2">29dp</dimen>
+    <dimen name="text_body_layout_height">47dp</dimen>
+    <dimen name="text_dropdown_align_list_item_height">47dp</dimen>
+    <dimen name="text_dropdown_align_list_item_padding_bottom">11dp</dimen>
+    <dimen name="text_dropdown_align_list_item_padding_left">10.5dp</dimen>
+    <dimen name="text_dropdown_align_list_item_padding_right">10.5dp</dimen>
+    <dimen name="text_dropdown_align_list_item_padding_top">12dp</dimen>
+    <dimen name="text_dropdown_align_list_width">47dp</dimen>
+    <dimen name="text_dropdown_align_width">47dp</dimen>
+    <dimen name="text_dropdown_font_name_end_size">33dp</dimen>
+    <dimen name="text_dropdown_font_name_width">140dp</dimen>
+    <dimen name="text_dropdown_font_size">14dp</dimen>
+    <dimen name="text_dropdown_font_size_width">47dp</dimen>
+    <dimen name="text_dropdown_height">192dp</dimen>
+    <dimen name="text_dropdown_position_y">32.5dp</dimen>
+    <dimen name="text_dropdown_window_elevation_value">3dp</dimen>
+    <dimen name="text_font_color_popup_margine_bottom">17dp</dimen>
+    <dimen name="text_font_color_popup_min_y">25dp</dimen>
+    <dimen name="text_scrollview_vi_start_x">59dp</dimen>
+    <dimen name="zoompad_handle_margin_bottom">7dp</dimen>
+    <dimen name="zoompad_selected_handle_margin">4dp</dimen>
+    <dimen name="zoompad_stroke_box_line_width">1dp</dimen>
+    <dimen name="zoompad_stroke_pad_border_width">8dp</dimen>
+    <integer name="pen_pen_button_unselected_height">54</integer>
+    <integer name="pen_pen_type_scroll_view_side_padding">14</integer>
+    <integer name="text_cover_animation_duration">50</integer>
+    <integer name="text_cover_animation_start_delay">200</integer>
+    <integer name="text_dropdown_align_image_width">26</integer>
+    <integer name="text_icon_image_height">26</integer>
+    <integer name="text_icon_image_width">26</integer>
+    <integer name="text_scroll_animation_duration">300</integer>
+    <integer name="text_upward_animation_duration">300</integer>
+    <integer name="text_visible_delay_time">700</integer>
+    <integer name="zoompad_button_height">28</integer>
+    <integer name="zoompad_button_width">28</integer>
+    <integer name="zoompad_handle_height">23</integer>
+    <integer name="zoompad_handle_width">21</integer>
+    <integer name="zoompad_handler_width">35</integer>
+    <integer name="zoompad_selected_handle_size">18</integer>
+    <style name="Base.Widget.AppCompat.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle.Common">
+          <item name="barLength">18.66dp</item>
+          <item name="gapBetweenBars">3.33dp</item>
+          <item name="drawableSize">24dp</item>
+     </style>
+</resources>

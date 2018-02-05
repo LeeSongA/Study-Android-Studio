@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Fri Feb 02 14:50:14 KST 2018
+1.base=D\:\\GitHub\\Study-Android-Studio\\1. Keypad_Project\\app\\build\\intermediates\\assets\\debug
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=ASSET
+0.path=classes.dex
+0.set=DEX
+0.base=D\:\\GitHub\\Study-Android-Studio\\1. Keypad_Project\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+1.path=index.html

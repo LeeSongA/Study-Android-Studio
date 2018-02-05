@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\GitHub\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw960dp-hdpi-v13\\values-sw960dp-hdpi-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\dream\\.gradle\\caches\\transforms-1\\files-1.1\\pen-v5.0.0_full.aar\\be079be1e8d328504d6e19d121a46da0\\res\\values-sw960dp-hdpi-v13\\values-sw960dp-hdpi-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,112,180,254",
+                        "endColumns": "56,67,73,73",
+                        "endOffsets": "107,175,249,323"
+                    }
+                }
+            ]
+        }
+    ]
+}
