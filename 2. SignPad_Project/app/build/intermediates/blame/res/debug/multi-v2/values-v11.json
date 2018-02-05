@@ -1,10 +1,21 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\GitHub\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "C:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\dream\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\03fbca038206ff725ccea7c95c12b714\\res\\values-v11\\values-v11.xml",
+                    "source": "C:\\Users\\ms\\.gradle\\caches\\transforms-1\\files-1.1\\pen-v5.0.0_full.aar\\6f30b8b683cd8431c182ec9575b22d3a\\res\\values-v11\\values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "189"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ms\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\1d925eaedb7426f37b0a46d45176eef1\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -20,17 +31,6 @@
                         "endLines": "12,18,24,30,36,42,43,47,51,52,56,60,61,65,70,75,80,82,84,85,86,140,195,196",
                         "endColumns": "12,12,12,12,12,12,88,12,12,100,12,12,102,12,12,12,12,12,12,70,82,12,12,90",
                         "endOffsets": "608,1033,1461,1887,2314,2739,2828,3074,3323,3424,3676,3931,4034,4287,4695,5115,5537,5644,5773,5844,5927,9952,14120,14211"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\dream\\.gradle\\caches\\transforms-1\\files-1.1\\pen-v5.0.0_full.aar\\be079be1e8d328504d6e19d121a46da0\\res\\values-v11\\values-v11.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "189"
                     }
                 }
             ]

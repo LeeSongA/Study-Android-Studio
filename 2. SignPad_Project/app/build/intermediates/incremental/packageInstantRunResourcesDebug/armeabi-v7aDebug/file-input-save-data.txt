@@ -1,0 +1,35 @@
+#Internal package file, do not edit.
+#Mon Feb 05 18:16:41 KST 2018
+7.path=hwrdb_document/model.bin
+2.base=C\:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\assets\\debug
+5.set=ASSET
+0.path=vidata/hwr_equation.dat
+2.baseType=DIRECTORY
+3.base=C\:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\assets\\debug
+7.baseType=DIRECTORY
+2.set=ASSET
+1.path=vidata/hwr_de_DE.dat
+4.base=C\:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\assets\\debug
+7.set=ASSET
+count=8
+5.baseType=DIRECTORY
+2.path=vidata/hwr_ko_KR.dat
+5.base=C\:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\assets\\debug
+4.set=ASSET
+3.path=index.html
+6.base=C\:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\assets\\debug
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=RELEASE
+7.base=C\:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\assets\\debug
+6.set=ASSET
+1.baseType=DIRECTORY
+6.baseType=DIRECTORY
+5.path=vidata/hwr_en_US.dat
+0.base=C\:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\assets\\debug
+0.baseType=DIRECTORY
+3.set=ASSET
+6.path=vidata/hwr_zh_CN.dat
+1.base=C\:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\2. SignPad_Project\\app\\build\\intermediates\\assets\\debug
+4.baseType=DIRECTORY
+0.set=ASSET

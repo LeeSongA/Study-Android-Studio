@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"ਹੋਮ ਨੈਵੀਗੇਟ ਕਰੋ"</string>
+    <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s, %2$s"</string>
+    <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s, %2$s, %3$s"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"ਉੱਪਰ ਨੈਵੀਗੇਟ ਕਰੋ"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"ਹੋਰ ਚੋਣਾਂ"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"ਹੋ ਗਿਆ"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"ਸਭ ਦੇਖੋ"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"ਇੱਕ ਐਪ ਚੁਣੋ"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"ਬੰਦ"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"ਤੇ"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"ਖੋਜ…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"ਸਵਾਲ ਹਟਾਓ"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"ਸਵਾਲ ਖੋਜੋ"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"ਖੋਜੋ"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"ਸਵਾਲ ਪ੍ਰਸਤੁਤ ਕਰੋ"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"ਵੌਇਸ ਖੋਜ"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"ਇਸ ਨਾਲ ਸਾਂਝਾ ਕਰੋ"</string>
+    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"%s ਨਾਲ ਸਾਂਝਾ ਕਰੋ"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"ਨਸ਼ਟ ਕਰੋ"</string>
+    <string name="pen_string_add">ਜੋੜੋ</string>
+    <string name="pen_string_add_preset">ਪ੍ਰੀਸੈੱਟ ਜੋੜੋ</string>
+    <string name="pen_string_align">ਇਕਸਾਰ ਕਰੋ</string>
+    <string name="pen_string_align_center">ਟੈਕਸਟ ਨੂੰ ਕੇਂਦਰ ਵਿੱਚ ਸੇਧ ਕਰੋ</string>
+    <string name="pen_string_align_justify">ਸਮਾਯੋਜਿਤ ਕਰੋ</string>
+    <string name="pen_string_align_left">ਟੈਕਸਟ ਨੂੰ ਖੱਬੇ ਪਾਸੇ ਸੇਧ ਕਰੋ</string>
+    <string name="pen_string_align_right">ਟੈਕਸਟ ਨੂੰ ਸੱਜੇ ਪਾਸੇ ਸੇਧ ਕਰੋ</string>
+    <string name="pen_string_alignment">ਸੇਧ</string>
+    <string name="pen_string_already_exists">ਪਹਿਲਾਂ ਤੋਂ ਹੀ ਮੌਜ਼ੂਦ ਹੈ।</string>
+    <string name="pen_string_amemo_more">ਹੋਰ</string>
+    <string name="pen_string_auto_moving">ਸਵੈ-ਮੂਵ ਕਰੋ ਖੇਤਰ ਦਾ ਆਕਾਰ ਸਮਾਯੋਜਿਤ ਕਰੋ</string>
+    <string name="pen_string_back">ਪਿੱਛੇ</string>
+    <string name="pen_string_bold">ਬੋਲਡ</string>
+    <string name="pen_string_brush">ਆਰਟ ਬ੍ਰਸ਼</string>
+    <string name="pen_string_bullet">ਬੁਲੇਟ ਪੌਇੰਟਸ</string>
+    <string name="pen_string_button">ਬਟਨ</string>
+    <string name="pen_string_calligraphy_pen">ਕੈਲੀਗ੍ਰਾਫੀ ਪੇੱਨ</string>
+    <string name="pen_string_cancel">ਰੱਦ</string>
+    <string name="pen_string_chinese_brush">ਕੈਲੀਗ੍ਰਾਫੀ ਬ੍ਰਸ਼</string>
+    <string name="pen_string_clear_all">ਸਭ ਮਿਟਾਉ</string>
+    <string name="pen_string_close">ਬੰਦ</string>
+    <string name="pen_string_color">ਰੰਗ</string>
+    <string name="pen_string_color_amber">ਐਂਬਰ</string>
+    <string name="pen_string_color_black">ਕਾਲਾ</string>
+    <string name="pen_string_color_blue">ਨੀਲਾ</string>
+    <string name="pen_string_color_blue_violet">ਨੀਲਾ-ਜਾਮਨੀ</string>
+    <string name="pen_string_color_brown">ਭੂਰਾ</string>
+    <string name="pen_string_color_burgundy">ਗੂੜ੍ਹਾ ਜਾਮਨੀ ਲਾਲ</string>
+    <string name="pen_string_color_burnt_umber">ਗੂੜ੍ਹਾ ਭੂਰਾ</string>
+    <string name="pen_string_color_chartreuse">ਚਾਰਟਰੇਯੂਜ਼</string>
+    <string name="pen_string_color_coral">ਕੋਰਲ</string>
+    <string name="pen_string_color_crimson">ਕ੍ਰਿਮਸਨ</string>
+    <string name="pen_string_color_current">ਮੌਜੂਦਾ</string>
+    <string name="pen_string_color_cyan">ਗੂੜ੍ਹਾ ਨੀਲਾ</string>
+    <string name="pen_string_color_dark_blue">ਗੂੜ੍ਹਾ ਨੀਲਾ</string>
+    <string name="pen_string_color_dark_cyan">ਡਾਰਕ ਸਿਆਨ</string>
+    <string name="pen_string_color_dark_grey">ਗੂੜ੍ਹਾ ਸਲੇਟੀ</string>
+    <string name="pen_string_color_dark_salmon">ਡਾਰਕ ਸੈਲਮਨ</string>
+    <string name="pen_string_color_deep_orange">ਗੂੜ੍ਹਾ ਸੰਤਰੀ</string>
+    <string name="pen_string_color_dim_grey">ਡਿਮ ਗ੍ਰੇ</string>
+    <string name="pen_string_color_forest_green">ਫੌਰੇਸਟ ਗ੍ਰੀਨ</string>
+    <string name="pen_string_color_gold">ਸੋਨਾ</string>
+    <string name="pen_string_color_green">ਹਰਾ</string>
+    <string name="pen_string_color_grey">ਸਲੇਟੀ</string>
+    <string name="pen_string_color_hot_pink">ਹੌਟ ਪਿੰਕ</string>
+    <string name="pen_string_color_indigo">ਗੂੜ੍ਹਾ ਨੀਲਾ</string>
+    <string name="pen_string_color_light_pink">ਲਾਈਟ ਪਿੰਕ</string>
+    <string name="pen_string_color_light_salmon">ਲਾਈਟ ਸੇਲਮੌਨ</string>
+    <string name="pen_string_color_lilac">ਨੀਲਾ</string>
+    <string name="pen_string_color_lime">ਲਾਈਮ</string>
+    <string name="pen_string_color_lime_green">ਨੀਂਬੂ ਵਰਗਾ ਹਰਾ</string>
+    <string name="pen_string_color_magenta">ਨਾਭੀ</string>
+    <string name="pen_string_color_maroon">ਗੂੜ੍ਹਾ ਲਾਲ</string>
+    <string name="pen_string_color_medium_orchid">ਮੀਡੀਅਮ ਔਰਕਿਡ</string>
+    <string name="pen_string_color_new">ਨਵਾਂ</string>
+    <string name="pen_string_color_olive_drab">ਔਲਿਵ ਡ੍ਰੈਬ</string>
+    <string name="pen_string_color_orange">ਸੰਤਰੀ</string>
+    <string name="pen_string_color_palette">ਕਸਟਮ ਰੰਗ ਪੈਲੇਟ</string>
+    <string name="pen_string_color_peach_puff">ਪੀਚ ਪਫ</string>
+    <string name="pen_string_color_peacock_blue">ਹਰਾ ਨੀਲਾ</string>
+    <string name="pen_string_color_permanent_violet">ਪੱਕਾ ਜਾਮਣੀ</string>
+    <string name="pen_string_color_picker_tts">ਰੰਗ ਚੋਣਕਰਤਾ</string>
+    <string name="pen_string_color_pink">ਗੁਲਾਬੀ</string>
+    <string name="pen_string_color_pitch_black">ਪੀਚ ਕਾਲਾ</string>
+    <string name="pen_string_color_plum">ਪਲੱਮ</string>
+    <string name="pen_string_color_purple">ਜਾਮਨੀ</string>
+    <string name="pen_string_color_red">ਲਾਲ</string>
+    <string name="pen_string_color_royal_blue">ਰੌਇਲ ਬਲਿਊ</string>
+    <string name="pen_string_color_saddle_brown">ਸੈਡਲ ਬ੍ਰਾਉਨ</string>
+    <string name="pen_string_color_sap_green">ਸੈਪ ਹਰਾ</string>
+    <string name="pen_string_color_sea_green">ਸਮੁੰਦਰੀ ਹਰਾ</string>
+    <string name="pen_string_color_sky_blue">ਅਸਮਾਨੀ ਨੀਲਾ</string>
+    <string name="pen_string_color_steel_blue">ਸਟੀਲ ਬਲਿਊ</string>
+    <string name="pen_string_color_tap_to_apply">ਲਾਗੂ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ।</string>
+    <string name="pen_string_color_teal">ਟੀਲ</string>
+    <string name="pen_string_color_tomato">ਟਮਾਟਰ</string>
+    <string name="pen_string_color_vandyke_brown">ਵੇਂਡਾਈਕ ਭੂਰਾ</string>
+    <string name="pen_string_color_viridian">ਨੀਲਾ ਹਰਾ</string>
+    <string name="pen_string_color_white">ਸਫੈਦ</string>
+    <string name="pen_string_color_yellow">ਪੀਲਾ</string>
+    <string name="pen_string_color_yellow_ochre">ਪੀਲਾ ਬਦਾਮੀ</string>
+    <string name="pen_string_copied_to_clipboard">ਕਲਿਪਬੋਰਡ ਤੇ ਕਾਪੀ ਹੋਇਆ।</string>
+    <string name="pen_string_correction_pen">ਕਰੈਕਸ਼ਨ ਪੇੱਨ</string>
+    <string name="pen_string_cursive">Cursive</string>
+    <string name="pen_string_delete_preset">ਮਿਟਾਓ</string>
+    <string name="pen_string_done">ਪੂਰਨ</string>
+    <string name="pen_string_drag_to_resize">ਦੁਬਾਰਾ ਆਕਾਰ ਦੇਣ ਲਈ ਟੈਪ ਅਤੇ ਡ੍ਰੈਗ ਕਰੋ</string>
+    <string name="pen_string_dropdown_list">ਡ੍ਰੌਪਡਾਉਨ ਸੂਚੀ</string>
+    <string name="pen_string_dummy">Dummy</string>
+    <string name="pen_string_enter">ਦਾਖ਼ਲ ਕਰੋ</string>
+    <string name="pen_string_erase_line_by_line">ਲਾਈਨ ਦਰ ਲਾਈਨ ਮਿਟਾਉ</string>
+    <string name="pen_string_erase_touched_area">ਟੱਚ ਕੀਤਾ ਖੇਤਰ ਮਿਟਾਓ</string>
+    <string name="pen_string_eraser_settings">ਇਰੇਜ਼ਰ ਸੈੱਟਿੰਗਸ</string>
+    <string name="pen_string_failed_to_recognise_shape">ਆਕਾਰ ਦੀ ਪਛਾਣ ਕਰਨ ਵਿੱਚ ਅਸਫਲ।</string>
+    <string name="pen_string_font_color">ਫੌਂਟ ਰੰਗ</string>
+    <string name="pen_string_font_size">ਫੌਂਟ ਆਕਾਰ</string>
+    <string name="pen_string_font_type">ਫੌਂਟ ਪ੍ਰਕਾਰ</string>
+    <string name="pen_string_fountain_pen">ਫਾਊਂਟੇਨ ਪੇੱਨ</string>
+    <string name="pen_string_gradation">ਕੋਈ ਰੰਗ ਚੱਕੋ</string>
+    <string name="pen_string_indent">ਇੰਡੈਂਟ</string>
+    <string name="pen_string_italic">ਇਟਾਲਿਕ</string>
+    <string name="pen_string_large">ਵੱਡਾ</string>
+    <string name="pen_string_lasso">ਲੈੱਸੋ</string>
+    <string name="pen_string_line_spacing">ਲਾਈਨਾਂ ਵਿਚਕਾਰ ਥਾਂ</string>
+    <string name="pen_string_minus">ਘਟਾਓ</string>
+    <string name="pen_string_modulation">Modulation</string>
+    <string name="pen_string_move_down">ਹੇਠਾਂ ਮੂਵ ਕਰੋ</string>
+    <string name="pen_string_move_left">ਖੱਬੇ ਮੂਵ ਕਰੋ</string>
+    <string name="pen_string_move_right">ਸੱਜੇ ਮੂਵ ਕਰੋ</string>
+    <string name="pen_string_move_up">ਉੱਪਰ ਮੂਵ ਕਰੋ</string>
+    <string name="pen_string_next">ਅੱਗੇ</string>
+    <string name="pen_string_no_pen_history">ਪੈਨ ਦਾ ਕੋਈ ਇਤਿਹਾਸ ਨਹੀਂ</string>
+    <string name="pen_string_no_preset">ਕੋਈ ਪ੍ਰੀਸੈੱਟ ਪੇੱਨਸ ਨਹੀਂ</string>
+    <string name="pen_string_opaque">ਅਪਾਰਦਰਸ਼ੀ</string>
+    <string name="pen_string_palette">ਪੈਲੇਟ</string>
+    <string name="pen_string_paragraph">ਪੈਰਾਗ੍ਰਾਫ</string>
+    <string name="pen_string_pasted_to_clipboard">ਕਲਿਪਬੋਰਡ ਤੋਂ ਪੇਸਟ ਕੀਤਾ ਗਿਆ।</string>
+    <string name="pen_string_pen">ਪੇੱਨ</string>
+    <string name="pen_string_pen_preset">ਪ੍ਰੀਸੈੱਟ %d</string>
+    <string name="pen_string_pen_settings">ਪੇੱਨ ਸੈੱਟਿੰਗਸ</string>
+    <string name="pen_string_pencil">ਪੈਨਸਿਲ</string>
+    <string name="pen_string_plus">ਜੋੜੋ</string>
+    <string name="pen_string_popup">ਪੌਪ-ਅਪ</string>
+    <string name="pen_string_preset">ਪ੍ਰੀਸੈੱਟ</string>
+    <string name="pen_string_previous">ਪਿੱਛੇ</string>
+    <string name="pen_string_reached_maximum_input">ਵਰਣ ਅਧਿਕਤਮ ਸੰਖਿਆ (%d) ਤੇ ਪਹੁੰਚ ਗਏ।</string>
+    <string name="pen_string_reached_maximum_preset">ਪ੍ਰੀਸੈੱਟ ਪੇੱਨਸ ਅਧਿਕਤਮ ਸੰਖਿਆ (%d) ਤੇ ਪਹੁੰਚੇ।</string>
+    <string name="pen_string_recent_color">ਹਾਲ ਹੀ ਵਿੱਚ ਵਰਤੇ ਰੰਗ</string>
+    <string name="pen_string_rectangle">ਆਇਤ</string>
+    <string name="pen_string_reset">ਰੀਸੈੱਟ ਕਰੋ</string>
+    <string name="pen_string_resize">ਦੁਬਾਰਾ ਆਕਾਰ ਦੇਣ ਲਈ ਟੈਪ ਅਤੇ ਡ੍ਰੈਗ ਕਰੋ</string>
+    <string name="pen_string_select_color">ਕੋਈ ਰੰਗ ਚੁਣੋ।</string>
+    <string name="pen_string_selection_mode">ਚੋਣ ਮੋਡ</string>
+    <string name="pen_string_setting">ਸੈੱਟਿੰਗ</string>
+    <string name="pen_string_small">ਛੋਟਾ</string>
+    <string name="pen_string_special">Special</string>
+    <string name="pen_string_sustenance">Sustenance</string>
+    <string name="pen_string_switch_to_front_camera">ਅਗਲੇ ਕੈਮਰੇ ਤੇ ਸਵਿੱਚ ਕਰੋ</string>
+    <string name="pen_string_switch_to_rear_camera">ਪਿਛਲੇ ਕੈਮਰੇ ਤੇ ਸਵਿੱਚ ਕਰੋ</string>
+    <string name="pen_string_tab_selected_tts">ਟੈਬ %2$d ਵਿੱਚੋਂ %1$d</string>
+    <string name="pen_string_text_settings">ਟੈਕਸਟ ਸੈੱਟਿੰਗਸ</string>
+    <string name="pen_string_thick">ਮੋਟਾ</string>
+    <string name="pen_string_thickness">ਮੋਟਾਈ</string>
+    <string name="pen_string_thin">ਪਤਲਾ</string>
+    <string name="pen_string_transform_back_to_original_shape">ਮੂਲ ਆਕ੍ਰਿਤੀ ਵਿੱਚ ਵਾਪਸ ਤਬਦੀਲ ਕਰੋ</string>
+    <string name="pen_string_transform_into_auto_shape">ਸਵੈ ਆਕਾਰ ਵਿੱਚ ਬਦਲੋ</string>
+    <string name="pen_string_transparency">ਪਾਰਦਰਸ਼ਤਾ</string>
+    <string name="pen_string_transparent">ਪਾਰਦਰਸ਼ੀ</string>
+    <string name="pen_string_unable_to_erase_heavy_lines">ਲਾਈਨ ਦਰ ਲਾਈਨ ਮਿਟਾਉਣ ਦੇ ਅਸਮਰੱਥ ਹੋਣ ਤੇ ਪਰਸਪਰ ਵਿਆਪੀ ਜਾਂ ਅਣਗਿਣਤ ਲਾਈਨਾਂ ਨੂੰ ਮਿਟਾਉਣ ਵਿੱਚ ਅਸਮਰੱਥ।</string>
+    <string name="pen_string_underline">ਅੰਡਰਲਾਈਨ</string>
+    <string msgid="146198913615257606" name="search_menu_title">"ਖੋਜ"</string>
+    <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+</resources>

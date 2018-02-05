@@ -1,1 +1,1 @@
-[{"splitType":"DENSITY","values":[]},{"splitType":"LANGUAGE","values":[]},{"splitType":"ABI","values":["armeabi-v7a"]},{"splitType":"ResConfigs","values":[]}]
+[{"splitType":"DENSITY","values":[]},{"splitType":"LANGUAGE","values":[]},{"splitType":"ABI","values":["x86_64","x86","armeabi-v7a","arm64-v8a"]},{"splitType":"ResConfigs","values":[]}]
