@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.samsung.android.sdk.SsdkUnsupportedException;
 import com.samsung.android.sdk.pen.Spen;
+import com.samsung.android.sdk.pen.SpenSettingPenInfo;
 import com.samsung.android.sdk.pen.document.SpenNoteDoc;
 import com.samsung.android.sdk.pen.document.SpenPageDoc;
 import com.samsung.android.sdk.pen.engine.SpenSurfaceView;
@@ -42,6 +43,9 @@ public class SignPad extends Activity {
     private SpenNoteDoc spenNoteDoc;
     private SpenPageDoc spenPageDoc;
     private SpenSurfaceView spenSurfaceView;
+    private SpenSettingPenInfo spenSettingPenInfo;
+
+    private int stroke;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +58,7 @@ public class SignPad extends Activity {
         double dp = displayMetrics.density;
 
         LinearLayout linearLayout = new LinearLayout(this);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((int)(300*dp), ViewGroup.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((int)(600*dp), ViewGroup.LayoutParams.WRAP_CONTENT);
         String BackgroundColor = "#eeeeee";
         linearLayout.setBackgroundColor(Color.parseColor((BackgroundColor)));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -71,7 +75,7 @@ public class SignPad extends Activity {
             linearLayout.addView(textView, textViewParams);
 
             LinearLayout linearLayout1 = new LinearLayout(this);
-            LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams((int)(300*dp), (int)(100*dp));
+            LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams((int)(600*dp), (int)(300*dp));
             linearLayout1.setOrientation(LinearLayout.VERTICAL);
             linearLayout.addView(linearLayout1, layoutParams1);
 
@@ -89,7 +93,7 @@ public class SignPad extends Activity {
             seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    Toast.makeText(getApplicationContext(), ""+progress,Toast.LENGTH_SHORT).show();
+                   stroke = progress;
                 }
 
                 @Override
@@ -99,7 +103,9 @@ public class SignPad extends Activity {
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
-
+                    Toast.makeText(getApplicationContext(), ""+stroke,Toast.LENGTH_SHORT).show();
+                    spenSettingPenInfo.size = stroke;
+                    spenSurfaceView.setPenSettingInfo(spenSettingPenInfo);
                 }
             });
             linearLayout.addView(seekBar, seekBarParams);
@@ -124,7 +130,7 @@ public class SignPad extends Activity {
                 LinearLayout.LayoutParams button_ClearParams = new LinearLayout.LayoutParams((int)(90*dp), ViewGroup.LayoutParams.WRAP_CONTENT);
                 button_Clear.setText("Clear");
                 button_ClearParams.gravity = Gravity.CENTER;
-                button_SaveParams.weight = 1.0f;
+                button_ClearParams.weight = 1.0f;
                 button_Clear.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -137,7 +143,7 @@ public class SignPad extends Activity {
                 LinearLayout.LayoutParams button_CancelParams = new LinearLayout.LayoutParams((int)(90*dp), ViewGroup.LayoutParams.WRAP_CONTENT);
                 button_Cancel.setText("Cancel");
                 button_CancelParams.gravity = Gravity.CENTER;
-                button_SaveParams.weight = 1.0f;
+                button_CancelParams.weight = 1.0f;
                 button_Cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -175,6 +181,9 @@ public class SignPad extends Activity {
             finish();
         }
         linearLayout1.addView(spenSurfaceView);
+
+        // Create Spen Setting Pen Info
+        spenSettingPenInfo = new SpenSettingPenInfo();
 
         // Get the dimension of the device screen.
         Display display = getWindowManager().getDefaultDisplay();
