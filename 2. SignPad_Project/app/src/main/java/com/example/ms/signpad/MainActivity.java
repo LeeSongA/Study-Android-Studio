@@ -60,13 +60,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(data != null) {
             String base64_image = data.getStringExtra("data");
-            if (resultCode == RESULT_OK) {
+            if (requestCode == 201 && resultCode == RESULT_OK) {
                 if (data.getStringExtra("result").equals("Save")) {
                     webView.loadUrl("javascript:Save('" + id + "', '" + base64_image + "');");
                 }
-                if (data.getStringExtra("result").equals("Clear")) {
-                    webView.loadUrl("javascript:Clear('" + id + "');");
-                }
+ //              if (data.getStringExtra("result").equals("Clear")) {
+ //                   webView.loadUrl("javascript:Clear('" + id + "');");
+ //               }
             }
         }
     }

@@ -24,6 +24,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ms.resource.StringResource;
 import com.samsung.android.sdk.SsdkUnsupportedException;
 import com.samsung.android.sdk.pen.Spen;
 import com.samsung.android.sdk.pen.SpenSettingPenInfo;
@@ -175,6 +176,8 @@ public class SignPad extends Activity {
 
         // Create Spen View
         spenSurfaceView = new SpenSurfaceView(context);
+        spenSurfaceView.setZoomable(false);
+
         if (spenSurfaceView == null) {
             Toast.makeText(context, "Cannot create new SpenView.",
                     Toast.LENGTH_SHORT).show();
@@ -205,7 +208,7 @@ public class SignPad extends Activity {
         }
 
         // Add a Page to NoteDoc, get an instance, and set it to the member variable.
-        spenPageDoc = spenNoteDoc.appendPage();
+        spenPageDoc = spenNoteDoc.appendPage();             // 수정 필요, 재사용
         spenPageDoc.setBackgroundColor(0xFFFFFFFF);
         spenPageDoc.clearHistory();
 
@@ -224,39 +227,24 @@ public class SignPad extends Activity {
         e.printStackTrace();
         int errType = e.getType();
         // If the device is not a Samsung device or if the device does not support Pen.
-        if (errType == SsdkUnsupportedException.VENDOR_NOT_SUPPORTED
-                || errType == SsdkUnsupportedException.DEVICE_NOT_SUPPORTED) {
-            Toast.makeText(context, "This device does not support Spen.",
-                    Toast.LENGTH_SHORT).show();
+        if (errType == SsdkUnsupportedException.VENDOR_NOT_SUPPORTED || errType == SsdkUnsupportedException.DEVICE_NOT_SUPPORTED) {
+            Toast.makeText(context, StringResource.DEVICE_NOT_SUPPORTED_MSG, Toast.LENGTH_SHORT).show();
             finish();
         }
         else if (errType == SsdkUnsupportedException.LIBRARY_NOT_INSTALLED) {
             // If SpenSDK APK is not installed.
-            showAlertDialog( "You need to install additional Spen software"
-                            +" to use this application."
-                            + "You will be taken to the installation screen."
-                            + "Restart this application after the software has been installed."
-                    , true);
-        } else if (errType
-                == SsdkUnsupportedException.LIBRARY_UPDATE_IS_REQUIRED) {
+            showAlertDialog(StringResource.LIBRARY_NOT_INSTALLED_MSG, true);
+        } else if (errType == SsdkUnsupportedException.LIBRARY_UPDATE_IS_REQUIRED) {
             // SpenSDK APK must be updated.
-            showAlertDialog( "You need to update your Spen software "
-                            + "to use this application."
-                            + " You will be taken to the installation screen."
-                            + " Restart this application after the software has been updated."
-                    , true);
-        } else if (errType
-                == SsdkUnsupportedException.LIBRARY_UPDATE_IS_RECOMMENDED) {
+            showAlertDialog(StringResource.LIBRARY_UPDATE_IS_REQUIRED_MSG, true);
+        } else if (errType == SsdkUnsupportedException.LIBRARY_UPDATE_IS_RECOMMENDED) {
             // Update of SpenSDK APK to an available new version is recommended.
-            showAlertDialog( "We recommend that you update your Spen software"
-                            +" before using this application."
-                            + " You will be taken to the installation screen."
-                            + " Restart this application after the software has been updated."
-                    , false);
+            showAlertDialog(StringResource.LIBRARY_UPDATE_IS_RECOMMENDED_MSG, false);
             return false;
         }
         return true;
     }
+
 
     private void showAlertDialog(String msg, final boolean closeActivity) {
 
@@ -271,7 +259,7 @@ public class SignPad extends Activity {
                             public void onClick(
                                     DialogInterface dialog, int which) {
                                 // Go to the market website and install/update APK.
-                                Uri uri = Uri.parse("market://details?id=" + Spen.getSpenPackageName());
+                                Uri uri = Uri.parse(StringResource.MARKETURL);
                                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                                         | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -333,10 +321,11 @@ public class SignPad extends Activity {
     }
 
     public void btn_Clear_event(View v) {       // 지우기
-        Intent intent = new Intent();
-        intent.putExtra("result", "Clear");
-        setResult(RESULT_OK, intent);
-        finish();
+        spenPageDoc = spenNoteDoc.appendPage();
+        spenPageDoc.setBackgroundColor(0xFFFFFFFF);
+        spenPageDoc.clearHistory();
+
+        spenSurfaceView.setPageDoc(spenPageDoc, true);
     }
 
     public void btn_Cancel_event(View v) {      // Screen 화면 닫기
@@ -349,8 +338,8 @@ public class SignPad extends Activity {
     public String saveSign() {
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            spenSurfaceView.captureCurrentView(true).compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
-            return Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
+            spenSurfaceView.captureCurrentView(true).compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+            return StringResource.BASE + Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
         } catch(Exception e) {
             e.printStackTrace();
             return null;
