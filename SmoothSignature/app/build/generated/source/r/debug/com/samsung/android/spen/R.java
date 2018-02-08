@@ -978,14 +978,14 @@ public final class R {
         public static final int setting_selection_view_hscroll = 0x7f0800e1;
         public static final int setting_selection_view_title = 0x7f0800e2;
         public static final int setting_selection_view_vscroll = 0x7f0800e3;
-        public static final int spen_brush_body_layout = 0x7f0800ea;
-        public static final int spen_brush_consume_layout = 0x7f0800eb;
-        public static final int text1 = 0x7f0800f7;
-        public static final int text_align_button = 0x7f0800fb;
-        public static final int text_align_image = 0x7f0800fc;
-        public static final int text_bullet = 0x7f0800fd;
-        public static final int text_font_size = 0x7f0800fe;
-        public static final int text_font_type_name = 0x7f0800ff;
+        public static final int spen_brush_body_layout = 0x7f0800e9;
+        public static final int spen_brush_consume_layout = 0x7f0800ea;
+        public static final int text1 = 0x7f0800f6;
+        public static final int text_align_button = 0x7f0800fa;
+        public static final int text_align_image = 0x7f0800fb;
+        public static final int text_bullet = 0x7f0800fc;
+        public static final int text_font_size = 0x7f0800fd;
+        public static final int text_font_type_name = 0x7f0800fe;
     }
     public static final class integer {
         public static final int color_picker_popup_content_point_correction_value = 0x7f090003;

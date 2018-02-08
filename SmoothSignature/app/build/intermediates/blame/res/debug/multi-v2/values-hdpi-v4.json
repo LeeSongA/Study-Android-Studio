@@ -33,6 +33,40 @@
                     }
                 }
             ]
+        },
+        {
+            "outputFile": "C:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\SmoothSignature\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ms\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\1d925eaedb7426f37b0a46d45176eef1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    },
+                    "to": {
+                        "startLines": "41",
+                        "startColumns": "4",
+                        "startOffsets": "2487",
+                        "endLines": "45",
+                        "endColumns": "13",
+                        "endOffsets": "2759"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ms\\.gradle\\caches\\transforms-1\\files-1.1\\pen-v5.0.0_full.aar\\542c8513b414bab93e3ea41920e698a0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,130,185,253,329,405,482,555,617,674,738,800,855,916,969,1027,1094,1162,1221,1279,1338,1399,1459,1521,1587,1658,1721,1788,1853,1909,1964,2029,2094,2152,2207,2261,2316,2370,2425",
+                        "endColumns": "74,54,67,75,75,76,72,61,56,63,61,54,60,52,57,66,67,58,57,58,60,59,61,65,70,62,66,64,55,54,64,64,57,54,53,54,53,54,61",
+                        "endOffsets": "125,180,248,324,400,477,550,612,669,733,795,850,911,964,1022,1089,1157,1216,1274,1333,1394,1454,1516,1582,1653,1716,1783,1848,1904,1959,2024,2089,2147,2202,2256,2311,2365,2420,2482"
+                    }
+                }
+            ]
         }
     ]
 }

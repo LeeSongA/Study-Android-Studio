@@ -1,6 +1,21 @@
 {
     "logs": [
         {
+            "outputFile": "C:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\SmoothSignature\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw960dp-hdpi-v13\\values-sw960dp-hdpi-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ms\\.gradle\\caches\\transforms-1\\files-1.1\\pen-v5.0.0_full.aar\\542c8513b414bab93e3ea41920e698a0\\res\\values-sw960dp-hdpi-v13\\values-sw960dp-hdpi-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,112,180,254",
+                        "endColumns": "56,67,73,73",
+                        "endOffsets": "107,175,249,323"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "D:\\GitHub\\Study-Android-Studio\\SmoothSignature\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw960dp-hdpi-v13\\values-sw960dp-hdpi-v13.xml",
             "map": [
                 {

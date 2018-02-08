@@ -1,6 +1,21 @@
 {
     "logs": [
         {
+            "outputFile": "C:\\Users\\ms\\AndroidStudioProjects\\Study-Android-Studio\\SmoothSignature\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-hdpi-v13\\values-sw360dp-hdpi-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ms\\.gradle\\caches\\transforms-1\\files-1.1\\pen-v5.0.0_full.aar\\542c8513b414bab93e3ea41920e698a0\\res\\values-sw360dp-hdpi-v13\\values-sw360dp-hdpi-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,132,203,291,380,469,559,644,722,801,875,950,1018,1085,1145,1213,1288,1355,1416,1482,1547,1612",
+                        "endColumns": "76,70,87,88,88,89,84,77,78,73,74,67,66,59,67,74,66,60,65,64,64,58",
+                        "endOffsets": "127,198,286,375,464,554,639,717,796,870,945,1013,1080,1140,1208,1283,1350,1411,1477,1542,1607,1666"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "D:\\GitHub\\Study-Android-Studio\\SmoothSignature\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-hdpi-v13\\values-sw360dp-hdpi-v13.xml",
             "map": [
                 {
