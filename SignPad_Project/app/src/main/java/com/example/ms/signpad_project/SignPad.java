@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ public class SignPad extends Activity{
     private SpenSettingPenInfo spenSettingPenInfo;
 
     private int stroke;
+    double dp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +56,25 @@ public class SignPad extends Activity{
         requestWindowFeature(Window.FEATURE_NO_TITLE);      // 타이틀바 없애기
         context = this;
 
+        Intent intent = getIntent();
+        int width = 2 * intent.getIntExtra("width", 0);
+        int height = 2 * intent.getIntExtra("height", 0);
+
+        // Get the dimension of the device screen. (단말기 해상도)
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        if(size.x <= width && size.y <= height) { // spenSurfaceView 크기 조절
+            width = width / 2;
+            height = height / 2;
+        }
+
         DisplayMetrics displayMetrics = new DisplayMetrics();               // px dp로 변환하기 위해서
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        double dp = displayMetrics.density;
+        dp = displayMetrics.density;
 
         LinearLayout linearLayout = new LinearLayout(this);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((int) (600 * dp), ViewGroup.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         String BackgroundColor = "#eeeeee";
         linearLayout.setBackgroundColor(Color.parseColor((BackgroundColor)));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -76,7 +91,7 @@ public class SignPad extends Activity{
         linearLayout.addView(textView, textViewParams);
 
         LinearLayout linearLayout1 = new LinearLayout(this);
-        LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams((int) (600 * dp), (int) (300 * dp));
+        LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(width, height);
         linearLayout1.setOrientation(LinearLayout.VERTICAL);
         linearLayout.addView(linearLayout1, layoutParams1);
 
@@ -168,7 +183,7 @@ public class SignPad extends Activity{
                 return;
             }
         } catch (Exception e1) {
-            Toast.makeText(context, "Cannot initialize Spen.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, StringResource.INITIALIZE_NOT_SPEN_MSG, Toast.LENGTH_SHORT).show();
             e1.printStackTrace();
             finish();
         }
@@ -176,10 +191,8 @@ public class SignPad extends Activity{
         // Create Spen View
         spenSurfaceView = new SpenSurfaceView(context);
         spenSurfaceView.setZoomable(false);
-
         if (spenSurfaceView == null) {
-            Toast.makeText(context, "Cannot create new SpenView.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, StringResource.CREATE_NOT_SPEN_VIEW_MSG, Toast.LENGTH_SHORT).show();
             finish();
         }
         linearLayout1.addView(spenSurfaceView);
@@ -188,17 +201,17 @@ public class SignPad extends Activity{
         spenSettingPenInfo = new SpenSettingPenInfo();
 
         // Get the dimension of the device screen.
-        Display display = getWindowManager().getDefaultDisplay();
-        Rect rect = new Rect();
-        display.getRectSize(rect);
+//        Display display = getWindowManager().getDefaultDisplay();
+//        Rect rect = new Rect();
+//        display.getRectSize(rect);
 
         // Create SpenNoteDoc
         try {
             spenNoteDoc =
-                    new SpenNoteDoc(context, rect.width(), rect.height());
+//                    new SpenNoteDoc(context, rect.width(), rect.height());
+            new SpenNoteDoc(context, width, height);
         } catch (IOException e) {
-            Toast.makeText(context, "Cannot create new NoteDoc.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, StringResource.CREATE_NOT_SPENNOTEDOC_MSG, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
             finish();
         } catch (Exception e) {
@@ -210,8 +223,7 @@ public class SignPad extends Activity{
 
         if(isSpenFeatureEnabled == false) {
             spenSurfaceView.setToolTypeAction(SpenSurfaceView.TOOL_FINGER, SpenSurfaceView.ACTION_STROKE);
-            Toast.makeText(context,
-                    "Device does not support Spen. \n You can draw stroke by finger.",
+            Toast.makeText(context, StringResource.DEVICE_NOT_SUPPORTED_MSG,
                     Toast.LENGTH_SHORT).show();
         }
     }
@@ -243,7 +255,7 @@ public class SignPad extends Activity{
         AlertDialog.Builder dlg = new AlertDialog.Builder(context);
         dlg.setIcon(getResources().getDrawable(
                 android.R.drawable.ic_dialog_alert));
-        dlg.setTitle("Upgrade Notification")
+        dlg.setTitle("알림")    // Upgrade Notification
                 .setMessage(msg)
                 .setPositiveButton(android.R.string.yes,
                         new DialogInterface.OnClickListener() {
@@ -285,6 +297,7 @@ public class SignPad extends Activity{
                 .show();
         dlg = null;
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -312,8 +325,8 @@ public class SignPad extends Activity{
 
         // Set PageDoc to View.
         spenSurfaceView.setPageDoc(spenPageDoc, true);
-
     }
+
     public void btn_Save_event(View v) {      // 서명 html canvas 로 전달
         Intent intent = new Intent();
         intent.putExtra("result", "Save");

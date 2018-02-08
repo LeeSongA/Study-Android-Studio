@@ -68,12 +68,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @JavascriptInterface
-        public void callAndroid(final String arg) {
+        public void callAndroid(final String arg, final int width, final int height) {
             Log.e("SignPad", arg);
             id = arg;
+
             Intent intent = new Intent(
                     getApplicationContext(),
                     SignPad.class);
+            intent.putExtra("width", width);
+            intent.putExtra("height", height);
             startActivityForResult(intent, 201);
         }
     }
