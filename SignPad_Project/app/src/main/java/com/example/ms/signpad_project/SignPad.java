@@ -7,18 +7,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.Point;
-import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -40,6 +38,9 @@ import java.io.IOException;
  * Created by ms on 2018-02-08.
  */
 
+// 비율 수정 필요
+// keypad 수정 필요
+
 public class SignPad extends Activity{
     private Context context;
     private SpenNoteDoc spenNoteDoc;
@@ -56,17 +57,38 @@ public class SignPad extends Activity{
         requestWindowFeature(Window.FEATURE_NO_TITLE);      // 타이틀바 없애기
         context = this;
 
-        Intent intent = getIntent();
-        int width = 2 * intent.getIntExtra("width", 0);
-        int height = 2 * intent.getIntExtra("height", 0);
+        WindowManager.LayoutParams wmlp = getWindow().getAttributes();
+            wmlp.gravity = Gravity.BOTTOM;
 
-        // Get the dimension of the device screen. (단말기 해상도)
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        if(size.x <= width && size.y <= height) { // spenSurfaceView 크기 조절
-            width = width / 2;
-            height = height / 2;
+        // Get html canvas size
+        Intent intent = getIntent();
+        int width = intent.getIntExtra("width", 0);
+        int height = intent.getIntExtra("height", 0);
+
+        // Get the dimension of the device screen.
+//        Display display = getWindowManager().getDefaultDisplay();
+//        Point size = new Point();
+//        display.getSize(size);
+
+        // Set Ratio
+        DisplayMetrics displayMetrics2 = getApplicationContext().getResources().getDisplayMetrics();
+        float widthRatio = displayMetrics2.widthPixels / width;
+        float heightRatio = (displayMetrics2.heightPixels * 2 / 5) / height;
+
+        // Set Ratio
+//        int widthRatio = size.x / width;            // size.x = maxWidth, size.y / 2 = maxHeight
+//        int heightRatio = (size.y / 2) / height;
+
+        // Set SpenSurfaceView Size
+        int screenWidth;
+        int screenHeight;
+        if(widthRatio > heightRatio) {
+            screenWidth = (int)(width * heightRatio);
+            screenHeight = (int)(height * heightRatio);
+        }
+        else {
+            screenWidth = (int)(width * widthRatio);
+            screenHeight = (int)(height * widthRatio);
         }
 
         DisplayMetrics displayMetrics = new DisplayMetrics();               // px dp로 변환하기 위해서
@@ -91,7 +113,7 @@ public class SignPad extends Activity{
         linearLayout.addView(textView, textViewParams);
 
         LinearLayout linearLayout1 = new LinearLayout(this);
-        LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(width, height);
+        LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(screenWidth, screenHeight);
         linearLayout1.setOrientation(LinearLayout.VERTICAL);
         linearLayout.addView(linearLayout1, layoutParams1);
 
@@ -207,9 +229,9 @@ public class SignPad extends Activity{
 
         // Create SpenNoteDoc
         try {
-            spenNoteDoc =
+            spenNoteDoc = new SpenNoteDoc(context, screenWidth, screenHeight);
 //                    new SpenNoteDoc(context, rect.width(), rect.height());
-            new SpenNoteDoc(context, width, height);
+
         } catch (IOException e) {
             Toast.makeText(context, StringResource.CREATE_NOT_SPENNOTEDOC_MSG, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
