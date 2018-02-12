@@ -38,9 +38,6 @@ import java.io.IOException;
  * Created by ms on 2018-02-08.
  */
 
-// 비율 수정 필요
-// keypad 수정 필요
-
 public class SignPad extends Activity{
     private Context context;
     private SpenNoteDoc spenNoteDoc;
@@ -57,9 +54,6 @@ public class SignPad extends Activity{
         requestWindowFeature(Window.FEATURE_NO_TITLE);      // 타이틀바 없애기
         context = this;
 
-        WindowManager.LayoutParams wmlp = getWindow().getAttributes();
-            wmlp.gravity = Gravity.BOTTOM;
-
         // Get html canvas size
         Intent intent = getIntent();
         int width = intent.getIntExtra("width", 0);
@@ -69,15 +63,18 @@ public class SignPad extends Activity{
 //        Display display = getWindowManager().getDefaultDisplay();
 //        Point size = new Point();
 //        display.getSize(size);
+//        int widthRatio = size.x / width;      // Set Ratio
+//        int heightRatio = (size.y / 2) / height;
 
         // Set Ratio
         DisplayMetrics displayMetrics2 = getApplicationContext().getResources().getDisplayMetrics();
-        float widthRatio = displayMetrics2.widthPixels / width;
-        float heightRatio = (displayMetrics2.heightPixels * 2 / 5) / height;
+        float widthRatio = (displayMetrics2.widthPixels * 9 / 10) / width;                       // (최대 너비) / canvas 너비
+        float heightRatio = (displayMetrics2.heightPixels * 2 / 5) / height;                     // (최대 높이) / canvas 높이
 
-        // Set Ratio
-//        int widthRatio = size.x / width;            // size.x = maxWidth, size.y / 2 = maxHeight
-//        int heightRatio = (size.y / 2) / height;
+        // Set SignPad Position
+        WindowManager.LayoutParams wmlp = getWindow().getAttributes();
+        wmlp.gravity = Gravity.BOTTOM;
+        wmlp.y = displayMetrics2.heightPixels * 1 / 10;
 
         // Set SpenSurfaceView Size
         int screenWidth;
@@ -91,10 +88,12 @@ public class SignPad extends Activity{
             screenHeight = (int)(height * widthRatio);
         }
 
-        DisplayMetrics displayMetrics = new DisplayMetrics();               // px dp로 변환하기 위해서
+        // px to dp
+        DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         dp = displayMetrics.density;
 
+        // layout
         LinearLayout linearLayout = new LinearLayout(this);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         String BackgroundColor = "#eeeeee";
@@ -112,6 +111,7 @@ public class SignPad extends Activity{
         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
         linearLayout.addView(textView, textViewParams);
 
+        // SignPad
         LinearLayout linearLayout1 = new LinearLayout(this);
         LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(screenWidth, screenHeight);
         linearLayout1.setOrientation(LinearLayout.VERTICAL);

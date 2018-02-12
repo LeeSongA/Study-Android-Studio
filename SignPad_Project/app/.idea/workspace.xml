@@ -1828,7 +1828,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="775" />
+    <option name="x" value="151" />
+    <option name="y" value="147" />
     <option name="width" value="1387" />
     <option name="height" value="1056" />
   </component>
@@ -2032,7 +2033,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518169612652" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518169764586" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2132,7 +2133,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518169612652" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518169764586" />
       </method>
     </configuration>
     <list size="1">
@@ -2171,7 +2172,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="775" y="0" width="1387" height="1056" extended-state="0" />
+    <frame x="151" y="147" width="1387" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
