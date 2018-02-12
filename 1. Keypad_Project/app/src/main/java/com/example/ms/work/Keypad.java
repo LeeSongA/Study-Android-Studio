@@ -8,11 +8,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,6 +25,14 @@ public class Keypad extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        WindowManager.LayoutParams wmlp = getWindow().getAttributes();
+        wmlp.gravity = Gravity.BOTTOM;
+
+        DisplayMetrics displayMetrics = getApplicationContext().getResources().getDisplayMetrics();
+        int width= displayMetrics.widthPixels * 3 / 5;
+        int height = displayMetrics.heightPixels * 3 / 10;
+        wmlp.y = displayMetrics.heightPixels * 1 / 20;
+
         LinearLayout linearLayout = new LinearLayout(this);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         linearLayout.setLayoutParams(layoutParams);
@@ -32,8 +42,7 @@ public class Keypad extends Activity {
 
         TextView textView = new TextView(this);
         // LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(50*dp));
-        LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Util.covertDptoPx(getApplicationContext(), 50));
-        textView.setLayoutParams(textViewParams);
+        LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height / 4);
         textView.setText("KeyPad");
         String BackgroundColor = "#00000000";
         textView.setBackgroundColor(Color.parseColor(BackgroundColor));
@@ -41,17 +50,16 @@ public class Keypad extends Activity {
         String TextColor = "#888888";
         textView.setTextColor(Color.parseColor(TextColor));
         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
-        linearLayout.addView(textView);
+        linearLayout.addView(textView, textViewParams);
 
         CustomNumpadView customNumpadView = new CustomNumpadView(this,null);
         customNumpadView.setActionListenerActivity(this);
         customNumpadView.setKeypad(this);
-        LinearLayout.LayoutParams customNumpadViewParams = new LinearLayout.LayoutParams(Util.covertDptoPx(getApplicationContext(), 250), Util.covertDptoPx(getApplicationContext(), 100));
-        customNumpadView.setLayoutParams(customNumpadViewParams);
-        linearLayout.addView(customNumpadView);
+        LinearLayout.LayoutParams customNumpadViewParams = new LinearLayout.LayoutParams(width, height);
+        linearLayout.addView(customNumpadView, customNumpadViewParams);
 
         Button button_Clear = new Button(this);
-        LinearLayout.LayoutParams button_SaveParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Util.covertDptoPx(getApplicationContext(), 50));
+        LinearLayout.LayoutParams button_SaveParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height / 4);   // Util.covertDptoPx(getApplicationContext(), 60)
         button_Clear.setText("Clear");
         String BackgroundColor1 = "#00000000";
         textView.setBackgroundColor(Color.parseColor(BackgroundColor1));
