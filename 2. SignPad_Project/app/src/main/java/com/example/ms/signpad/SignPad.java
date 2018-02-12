@@ -7,7 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.Rect;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
@@ -18,6 +18,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -47,6 +48,7 @@ public class SignPad extends Activity {
     private SpenSettingPenInfo spenSettingPenInfo;
 
     private int stroke;
+    double dp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +56,48 @@ public class SignPad extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);      // 타이틀바 없애기
         context = this;
 
-        DisplayMetrics displayMetrics = new DisplayMetrics();               // px dp로 변환하기 위해서
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        double dp = displayMetrics.density;
+        // Get html canvas size
+        Intent intent = getIntent();
+        int width = intent.getIntExtra("width", 0);
+        int height = intent.getIntExtra("height", 0);
 
+        // Get the dimension of the device screen.
+//        Display display = getWindowManager().getDefaultDisplay();
+//        Point size = new Point();
+//        display.getSize(size);
+//        int widthRatio = size.x / width;      // Set Ratio
+//        int heightRatio = (size.y / 2) / height;
+
+        // Set Ratio
+        DisplayMetrics displayMetrics2 = getApplicationContext().getResources().getDisplayMetrics();
+        float widthRatio = (displayMetrics2.widthPixels * 9 / 10) / width;                       // (최대 너비) / canvas 너비
+        float heightRatio = (displayMetrics2.heightPixels * 2 / 5) / height;                     // (최대 높이) / canvas 높이
+
+        // Set SignPad Position
+        WindowManager.LayoutParams wmlp = getWindow().getAttributes();
+        wmlp.gravity = Gravity.BOTTOM;
+        wmlp.y = displayMetrics2.heightPixels * 1 / 10;
+
+        // Set SpenSurfaceView Size
+        int screenWidth;
+        int screenHeight;
+        if(widthRatio > heightRatio) {
+            screenWidth = (int)(width * heightRatio);
+            screenHeight = (int)(height * heightRatio);
+        }
+        else {
+            screenWidth = (int)(width * widthRatio);
+            screenHeight = (int)(height * widthRatio);
+        }
+
+        // px to dp
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        dp = displayMetrics.density;
+
+        // layout
         LinearLayout linearLayout = new LinearLayout(this);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((int)(600*dp), ViewGroup.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         String BackgroundColor = "#eeeeee";
         linearLayout.setBackgroundColor(Color.parseColor((BackgroundColor)));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -75,8 +113,9 @@ public class SignPad extends Activity {
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
             linearLayout.addView(textView, textViewParams);
 
+            // SignPad
             LinearLayout linearLayout1 = new LinearLayout(this);
-            LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams((int)(600*dp), (int)(300*dp));
+            LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(screenWidth, screenHeight);
             linearLayout1.setOrientation(LinearLayout.VERTICAL);
             linearLayout.addView(linearLayout1, layoutParams1);
 
@@ -168,8 +207,7 @@ public class SignPad extends Activity {
                 return;
             }
         } catch (Exception e1) {
-            Toast.makeText(context, "Cannot initialize Spen.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, StringResource.INITIALIZE_NOT_SPEN_MSG, Toast.LENGTH_SHORT).show();
             e1.printStackTrace();
             finish();
         }
@@ -179,8 +217,7 @@ public class SignPad extends Activity {
         spenSurfaceView.setZoomable(false);
 
         if (spenSurfaceView == null) {
-            Toast.makeText(context, "Cannot create new SpenView.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, StringResource.CREATE_NOT_SPEN_VIEW_MSG, Toast.LENGTH_SHORT).show();
             finish();
         }
         linearLayout1.addView(spenSurfaceView);
@@ -189,17 +226,16 @@ public class SignPad extends Activity {
         spenSettingPenInfo = new SpenSettingPenInfo();
 
         // Get the dimension of the device screen.
-        Display display = getWindowManager().getDefaultDisplay();
-        Rect rect = new Rect();
-        display.getRectSize(rect);
+//        Display display = getWindowManager().getDefaultDisplay();
+//        Rect rect = new Rect();
+//        display.getRectSize(rect);
 
         // Create SpenNoteDoc
         try {
-            spenNoteDoc =
-                    new SpenNoteDoc(context, rect.width(), rect.height());
+            spenNoteDoc = new SpenNoteDoc(context, screenWidth, screenHeight);
+//                    new SpenNoteDoc(context, rect.width(), rect.height());
         } catch (IOException e) {
-            Toast.makeText(context, "Cannot create new NoteDoc.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, StringResource.CREATE_NOT_SPENNOTEDOC_MSG, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
             finish();
         } catch (Exception e) {
@@ -207,19 +243,11 @@ public class SignPad extends Activity {
             finish();
         }
 
-        // Add a Page to NoteDoc, get an instance, and set it to the member variable.
-        spenPageDoc = spenNoteDoc.appendPage();             // 수정 필요, 재사용
-        spenPageDoc.setBackgroundColor(0xFFFFFFFF);
-        spenPageDoc.clearHistory();
-
-        // Set PageDoc to View.
-        spenSurfaceView.setPageDoc(spenPageDoc, true);
+        this.setPage();
 
         if(isSpenFeatureEnabled == false) {
             spenSurfaceView.setToolTypeAction(SpenSurfaceView.TOOL_FINGER, SpenSurfaceView.ACTION_STROKE);
-            Toast.makeText(context,
-                    "Device does not support Spen. \n You can draw stroke by finger.",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, StringResource.DEVICE_NOT_SUPPORTED_MSG, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -245,13 +273,12 @@ public class SignPad extends Activity {
         return true;
     }
 
-
     private void showAlertDialog(String msg, final boolean closeActivity) {
 
         AlertDialog.Builder dlg = new AlertDialog.Builder(context);
         dlg.setIcon(getResources().getDrawable(
                 android.R.drawable.ic_dialog_alert));
-        dlg.setTitle("Upgrade Notification")
+        dlg.setTitle("알림")      // Upgrade Notification
                 .setMessage(msg)
                 .setPositiveButton(android.R.string.yes,
                         new DialogInterface.OnClickListener() {
@@ -312,6 +339,16 @@ public class SignPad extends Activity {
         }
     };
 
+    public void setPage() {
+        // Add a Page to NoteDoc, get an instance, and set it to the member variable.
+        spenPageDoc = spenNoteDoc.appendPage();
+        spenPageDoc.setBackgroundColor(0xFFFFFFFF);
+        spenPageDoc.clearHistory();
+
+        // Set PageDoc to View.
+        spenSurfaceView.setPageDoc(spenPageDoc, true);
+    }
+
     public void btn_Save_event(View v) {      // 서명 html canvas 로 전달
         Intent intent = new Intent();
         intent.putExtra("result", "Save");
@@ -321,11 +358,7 @@ public class SignPad extends Activity {
     }
 
     public void btn_Clear_event(View v) {       // 지우기
-        spenPageDoc = spenNoteDoc.appendPage();
-        spenPageDoc.setBackgroundColor(0xFFFFFFFF);
-        spenPageDoc.clearHistory();
-
-        spenSurfaceView.setPageDoc(spenPageDoc, true);
+        this.setPage();
     }
 
     public void btn_Cancel_event(View v) {      // Screen 화면 닫기

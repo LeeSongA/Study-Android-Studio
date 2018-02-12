@@ -2,6 +2,7 @@ package com.example.ms.signpad;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -64,11 +65,16 @@ public class MainActivity extends AppCompatActivity {
                 if (data.getStringExtra("result").equals("Save")) {
                     webView.loadUrl("javascript:Save('" + id + "', '" + base64_image + "');");
                 }
- //              if (data.getStringExtra("result").equals("Clear")) {
- //                   webView.loadUrl("javascript:Clear('" + id + "');");
- //               }
+                 //              if (data.getStringExtra("result").equals("Clear")) {
+                 //                   webView.loadUrl("javascript:Clear('" + id + "');");
+                 //               }
             }
         }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 
     private class AndroidBridge {                                       // 자바스크립트와 안드로이드 연동
@@ -79,12 +85,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @JavascriptInterface
-        public void callAndroid(final String arg) {
+        public void callAndroid(final String arg, final int width, final int height) {
             Log.e("SignPad", arg);
             id = arg;
             Intent intent = new Intent(
                     getApplicationContext(),
                     SignPad.class);
+            intent.putExtra("width", width);
+            intent.putExtra("height", height);
             startActivityForResult(intent, 201);
         }
     }

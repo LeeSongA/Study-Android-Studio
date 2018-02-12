@@ -2,8 +2,8 @@
 <html>
 <head>
     <script>
-        function Event(id) {
-            window.SignPad.callAndroid(id);
+        function Event(id, width, height) {
+            window.SignPad.callAndroid(id, width, height);
         }
         function Save(id, data) {
             var canvas = document.getElementById(id);
@@ -24,10 +24,10 @@
     </style>
 </head>
 <body>
-    <canvas class="canvas" id="canvas1" width="400" height="200" onclick="Event(this.id)"></canvas>
+    <canvas class="canvas" id="canvas1" width="400" height="200" onclick="Event(this.id, this.width, this.height)"></canvas>
     </br>
-    <canvas class="canvas" id="canvas2" width="400" height="200" onclick="Event(this.id)"></canvas>
+    <canvas class="canvas" id="canvas2" width="300" height="300" onclick="Event(this.id, this.width, this.height)"></canvas>
     </br>
-    <canvas class="canvas" id="canvas3" width="400" height="200" onclick="Event(this.id)"></canvas>
+    <canvas class="canvas" id="canvas3" width="500" height="700" onclick="Event(this.id, this.width, this.height)"></canvas>
 </body>
 </html>
