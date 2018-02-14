@@ -2,11 +2,13 @@
 [![Android](https://img.shields.io/badge/Java-Android-green.svg)]()
 <h2>1. Keypad_Project</h2>
 
-[![Keypad](https://raw.githubusercontent.com/LeeSongA/Study-Android-Studio/master/screenshot/keypad.png)]()
+[![Keypad](https://raw.githubusercontent.com/LeeSongA/Study-Android-Studio/master/screenshot/KeyPad_Main.png)]()
 
 
 <h2>2. SignPad_Project</h2>
 
 This project used Samsung S-Pen SDK wrapper library.
+
+[![SignPad](https://raw.githubusercontent.com/LeeSongA/Study-Android-Studio/master/screenshot/SignPad.png)]()
 
 
